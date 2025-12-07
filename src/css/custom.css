@@ -1,0 +1,376 @@
+/**
+ * Custom CSS for Physical AI & Humanoid Robotics Textbook
+ * Futuristic robotics theme with blue/purple neon accents
+ */
+
+:root {
+  /* Primary theme colors - futuristic robotics */
+  --ifm-color-primary: #2575fc; /* Bright blue */
+  --ifm-color-primary-dark: #1a56db;
+  --ifm-color-primary-darker: #184db3;
+  --ifm-color-primary-darkest: #0d3070;
+  --ifm-color-primary-light: #3a86ff;
+  --ifm-color-primary-lighter: #6a5af9;
+  --ifm-color-primary-lightest: #d5ccff;
+
+  /* Secondary theme colors - purple accents */
+  --ifm-color-secondary: #6a11cb; /* Deep purple */
+  --ifm-color-secondary-dark: #4a0a96;
+  --ifm-color-secondary-darker: #3a087a;
+  --ifm-color-secondary-darkest: #2a065d;
+  --ifm-color-secondary-light: #8a2be2;
+  --ifm-color-secondary-lighter: #a45deb;
+  --ifm-color-secondary-lightest: #e0ccff;
+
+  /* Additional accent colors */
+  --ifm-color-accent: #ff2e63; /* Neon pink */
+  --ifm-color-accent-light: #ff5c8a;
+
+  /* Custom colors for modules */
+  --module-1-color: #3a86ff; /* ROS 2 Blue */
+  --module-2-color: #06d6a0; /* Simulation Green */
+  --module-3-color: #ff2e63; /* AI Red/Pink */
+  --module-4-color: #ffbe0b; /* VLA Yellow */
+
+  /* Background and text colors */
+  --ifm-background-color: #0a0a1a; /* Dark space background */
+  --ifm-text-color: #e6e6ff; /* Light text for contrast */
+  --ifm-border-color: #4a4a8a; /* Purple-tinged border */
+}
+
+/* Global styles for futuristic robotics theme */
+body {
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
+  color: var(--ifm-text-color);
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Main content wrapper */
+.main-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem var(--ifm-spacing-horizontal);
+  background: rgba(10, 10, 26, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Hero banner with neon effect */
+.hero-banner {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 16px;
+  margin-bottom: 3rem;
+  box-shadow: 0 8px 32px rgba(37, 117, 252, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hero-banner h1 {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  position: relative;
+  z-index: 2;
+}
+
+.hero-banner p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  z-index: 2;
+}
+
+/* Buttons with neon effect */
+.button {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  border: none;
+  box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 117, 252, 0.6);
+  background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(30deg);
+  transition: all 0.6s ease;
+}
+
+.button:hover::after {
+  transform: rotate(30deg) translate(20%, 20%);
+}
+
+/* Section headers with neon effect */
+h2 {
+  border-bottom: 2px solid var(--ifm-color-primary);
+  padding-bottom: 0.5rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-color-primary-light);
+  text-shadow: 0 0 8px rgba(37, 117, 252, 0.5);
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 30%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-secondary));
+}
+
+/* Code blocks with futuristic theme */
+.code-block {
+  background: rgba(10, 10, 26, 0.8) !important;
+  border: 1px solid var(--ifm-border-color) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 15px rgba(37, 117, 252, 0.2) !important;
+}
+
+/* Callout blocks with theme colors */
+.theme-doc-markdown-alert {
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  border-left: 4px solid;
+  background: rgba(255, 255, 255, 0.05);
+  border-left-color: var(--ifm-color-primary);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 15px rgba(37, 117, 252, 0.1);
+}
+
+.theme-doc-markdown-alert--info {
+  border-left-color: var(--ifm-color-primary);
+  background: rgba(37, 117, 252, 0.1);
+}
+
+.theme-doc-markdown-alert--warning {
+  border-left-color: var(--ifm-color-accent);
+  background: rgba(255, 46, 99, 0.1);
+}
+
+.theme-doc-markdown-alert--danger {
+  border-left-color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.1);
+}
+
+.theme-doc-markdown-alert--success {
+  border-left-color: var(--ifm-color-secondary);
+  background: rgba(6, 214, 160, 0.1);
+}
+
+/* Blockquotes with futuristic styling */
+blockquote {
+  border-left: 4px solid var(--ifm-color-secondary);
+  padding-left: 1.5rem;
+  color: var(--ifm-text-color);
+  font-style: italic;
+  margin: 1.5rem 0;
+  background: rgba(106, 17, 203, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 4px 15px rgba(106, 17, 203, 0.2);
+}
+
+/* Card components with neon theme */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--ifm-border-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(37, 117, 252, 0.4);
+  border: 1px solid rgba(37, 117, 252, 0.5);
+}
+
+.card__header h3 {
+  color: var(--ifm-color-primary-light);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 8px rgba(37, 117, 252, 0.3);
+}
+
+/* Navigation sidebar with theme */
+.menu {
+  background: rgba(10, 10, 26, 0.8);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid var(--ifm-border-color);
+}
+
+.menu__link {
+  color: var(--ifm-text-color);
+  transition: all 0.2s ease;
+}
+
+.menu__link:hover {
+  background: rgba(37, 117, 252, 0.2);
+  color: white;
+}
+
+.menu__link--active {
+  background: linear-gradient(90deg, rgba(37, 117, 252, 0.3), transparent);
+  color: white;
+  border-left: 3px solid var(--ifm-color-primary);
+}
+
+/* Footer with futuristic styling */
+.footer {
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
+  color: var(--ifm-text-color);
+  border-top: 1px solid var(--ifm-border-color);
+}
+
+.footer a {
+  color: var(--ifm-color-primary-light);
+  transition: all 0.2s ease;
+}
+
+.footer a:hover {
+  color: var(--ifm-color-secondary-light);
+  text-shadow: 0 0 8px rgba(106, 17, 203, 0.8);
+}
+
+/* Links with neon effect */
+a {
+  color: var(--ifm-color-primary-light);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--ifm-color-secondary-light);
+  text-shadow: 0 0 8px rgba(106, 17, 203, 0.8);
+}
+
+/* Table styling */
+.table {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--ifm-border-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table thead tr {
+  background: rgba(37, 117, 252, 0.2);
+}
+
+.table th, .table td {
+  border-bottom: 1px solid var(--ifm-border-color);
+}
+
+/* Search bar styling */
+.navbar__search-input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--ifm-border-color);
+  border-radius: 8px;
+  color: var(--ifm-text-color);
+  backdrop-filter: blur(4px);
+}
+
+.navbar__search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Diagram placeholders */
+.diagram-placeholder {
+  border: 2px dashed var(--ifm-color-primary);
+  padding: 2rem;
+  text-align: center;
+  margin: 2rem 0;
+  background: rgba(37, 117, 252, 0.1);
+  color: var(--ifm-color-primary-light);
+  font-style: italic;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.diagram-placeholder:hover {
+  background: rgba(37, 117, 252, 0.2);
+  box-shadow: 0 0 15px rgba(37, 117, 252, 0.3);
+}
+
+/* Module-specific styling */
+.module-1-section {
+  border-left: 3px solid var(--module-1-color);
+}
+
+.module-2-section {
+  border-left: 3px solid var(--module-2-color);
+}
+
+.module-3-section {
+  border-left: 3px solid var(--module-3-color);
+}
+
+.module-4-section {
+  border-left: 3px solid var(--module-4-color);
+}
+
+/* Responsive design */
+@media (max-width: 996px) {
+  .hero-banner {
+    padding: 2rem 1rem;
+  }
+
+  .hero-banner h1 {
+    font-size: 2rem;
+  }
+
+  .main-wrapper {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* Custom animation for interactive elements */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 117, 252, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(37, 117, 252, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 117, 252, 0); }
+}
+
+.button--primary:hover {
+  animation: pulse 2s infinite;
+}

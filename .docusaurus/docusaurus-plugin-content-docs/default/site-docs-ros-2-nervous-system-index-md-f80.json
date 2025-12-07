@@ -1,0 +1,24 @@
+{
+  "id": "ros2-nervous-system/index",
+  "title": "Module 1: The Robotic Nervous System (ROS 2)",
+  "description": "Welcome to Module 1, \"The Robotic Nervous System (ROS 2)\"! This module is designed to introduce you to the fundamental concepts of the Robot Operating System 2 (ROS 2), a flexible framework for writing robot software. Whether you're a student, a developer new to robotics, or an enthusiast interested in Physical AI and humanoid robotics, this module will provide you with the foundational knowledge and practical skills to get started.",
+  "source": "@site/docs/ros2-nervous-system/index.md",
+  "sourceDirName": "ros2-nervous-system",
+  "slug": "/ros2-nervous-system/",
+  "permalink": "/docs/ros2-nervous-system/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/ros2-nervous-system/index.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 1 Glossary",
+    "permalink": "/docs/ros2-nervous-system/glossary"
+  },
+  "next": {
+    "title": "Physical AI & Humanoid Robotics Textbook",
+    "permalink": "/docs/Physical-AI-and-Humanoid-Robotics-Textbook/intro"
+  }
+}

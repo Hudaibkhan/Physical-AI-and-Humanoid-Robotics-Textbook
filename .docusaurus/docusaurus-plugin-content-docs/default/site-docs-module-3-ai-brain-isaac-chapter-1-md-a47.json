@@ -1,0 +1,24 @@
+{
+  "id": "module3-ai-brain-isaac/chapter1",
+  "title": "Chapter 9: NVIDIA Isaac Sim – Digital Twin",
+  "description": "Learning Goals",
+  "source": "@site/docs/module3-ai-brain-isaac/chapter1.md",
+  "sourceDirName": "module3-ai-brain-isaac",
+  "slug": "/module3-ai-brain-isaac/chapter1",
+  "permalink": "/docs/module3-ai-brain-isaac/chapter1",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module3-ai-brain-isaac/chapter1.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 3: AI Brain (NVIDIA Isaac)",
+    "permalink": "/docs/module3-ai-brain-isaac/"
+  },
+  "next": {
+    "title": "Chapter 10: Isaac ROS Perception + VSLAM",
+    "permalink": "/docs/module3-ai-brain-isaac/chapter2"
+  }
+}

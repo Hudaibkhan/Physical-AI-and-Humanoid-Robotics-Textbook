@@ -1,0 +1,24 @@
+{
+  "id": "additional-materials/final_materials",
+  "title": "Final Materials: Glossary, References, Exam, and Rubric",
+  "description": "Learning Goals",
+  "source": "@site/docs/additional-materials/final_materials.md",
+  "sourceDirName": "additional-materials",
+  "slug": "/additional-materials/final_materials",
+  "permalink": "/docs/additional-materials/final_materials",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/additional-materials/final_materials.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Cloud-Native Robotics Environments",
+    "permalink": "/docs/additional-materials/cloud"
+  },
+  "next": {
+    "title": "Chapter 15: Hardware Architecture & Lab Setup",
+    "permalink": "/docs/additional-materials/hardware"
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "/__docusaurus/debug-5ff": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/config-5ba": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/content-a2b": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    },
+    "__props": "__props---docusaurus-debug-content-3-c-0-be2"
+  },
+  "/__docusaurus/debug/globalData-c3c": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/metadata-156": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/registry-88c": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/routes-000": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/docs-567": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---docsaba-d7c"
+    }
+  },
+  "/docs-528": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---docs-005-788"
+  },
+  "/docs-48f": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/docs/additional-materials/-4bb": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-additional-materials-01-b-6fd"
+  },
+  "/docs/additional-materials/cloud-cc8": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-additional-materials-cloud-461-5b8"
+  },
+  "/docs/additional-materials/final_materials-0bb": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-additional-materials-final-materialsecb-92e"
+  },
+  "/docs/additional-materials/hardware-f5d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-additional-materials-hardware-433-0b6"
+  },
+  "/docs/capstone-project/chapter1-83d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-capstone-project-chapter-134-b-ed4"
+  },
+  "/docs/intro-61d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-intro-0-e-3-be1"
+  },
+  "/docs/module1-ros2-nervous-system/-cbf": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-ros-2-nervous-system-d-37-20b"
+  },
+  "/docs/module1-ros2-nervous-system/chapter1-1c6": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-ros-2-nervous-system-chapter-1-c-2-c-551"
+  },
+  "/docs/module1-ros2-nervous-system/chapter2-4a4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-ros-2-nervous-system-chapter-2-d-12-dc6"
+  },
+  "/docs/module1-ros2-nervous-system/chapter3-eed": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-ros-2-nervous-system-chapter-3985-727"
+  },
+  "/docs/module1-ros2-nervous-system/chapter4-dc8": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-ros-2-nervous-system-chapter-4343-df1"
+  },
+  "/docs/module1-ros2-nervous-system/chapter5-62f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-ros-2-nervous-system-chapter-55-ea-9c1"
+  },
+  "/docs/module1-ros2-nervous-system/citation_guide-c2a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-ros-2-nervous-system-citation-guideb-87-23c"
+  },
+  "/docs/module1-ros2-nervous-system/glossary-c43": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-ros-2-nervous-system-glossaryd-5-b-25e"
+  },
+  "/docs/module2-digital-twin-simulation/-8a0": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-2-digital-twin-simulation-18-c-5a7"
+  },
+  "/docs/module2-digital-twin-simulation/chapter1-9d3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-2-digital-twin-simulation-chapter-14-a-7-407"
+  },
+  "/docs/module2-digital-twin-simulation/chapter2-985": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-2-digital-twin-simulation-chapter-2191-1c7"
+  },
+  "/docs/module2-digital-twin-simulation/chapter3-562": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-2-digital-twin-simulation-chapter-36-cf-964"
+  },
+  "/docs/module3-ai-brain-isaac/-82b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-3-ai-brain-isaac-445-505"
+  },
+  "/docs/module3-ai-brain-isaac/chapter1-270": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-3-ai-brain-isaac-chapter-1-a-47-7bb"
+  },
+  "/docs/module3-ai-brain-isaac/chapter2-b71": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-3-ai-brain-isaac-chapter-2-ee-7-3ce"
+  },
+  "/docs/module3-ai-brain-isaac/chapter3-878": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-3-ai-brain-isaac-chapter-3-d-8-f-8d8"
+  },
+  "/docs/module4-vla-robotics/-9cd": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-4-vla-robotics-325-643"
+  },
+  "/docs/module4-vla-robotics/chapter1-8f3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-4-vla-robotics-chapter-1627-f62"
+  },
+  "/docs/module4-vla-robotics/chapter2-db8": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-4-vla-robotics-chapter-2-fbc-6ec"
+  },
+  "/docs/Physical-AI-and-Humanoid-Robotics-Textbook/intro-9d6": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-physical-ai-and-humanoid-robotics-textbook-introb-88-c11"
+  },
+  "/docs/weekly-roadmap-83e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-weekly-roadmap-888-d2a"
+  },
+  "/-e5f": {
+    "__comp": "__comp---site-src-pages-index-tsx-1-df-d3e",
+    "__context": {
+      "plugin": "plugin---a-74-9d6"
+    },
+    "config": "config---5-e-9-4f3"
+  }
+}

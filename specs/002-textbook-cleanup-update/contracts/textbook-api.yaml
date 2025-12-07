@@ -1,0 +1,101 @@
+# API Contract: Textbook Navigation and Content Access
+
+## Overview
+This contract defines the expected behavior for textbook navigation and content access, particularly for the front page module cards and sidebar navigation.
+
+## Endpoints
+
+### GET /api/module/{id}
+Retrieve module information for display in module cards or sidebar
+
+**Request**:
+- Path parameter: id (module identifier)
+- No request body required
+
+**Response**:
+```
+{
+  "id": "module1-ros2-nervous-system",
+  "title": "Module 1: ROS 2 Nervous System",
+  "description": "Learn about ROS 2 as the robot nervous system...",
+  "learningObjectives": ["List of learning objectives"],
+  "chapters": ["List of chapter titles and paths"],
+  "icon": "icon-class-name",
+  "link": "/module1-ros2-nervous-system"
+}
+```
+
+### GET /api/textbook-structure
+Retrieve the complete textbook navigation structure for sidebar
+
+**Request**:
+- No parameters required
+- No request body required
+
+**Response**:
+```
+{
+  "title": "Physical AI & Humanoid Robotics Textbook",
+  "modules": [
+    {
+      "id": "module1-ros2-nervous-system",
+      "title": "Module 1: ROS 2 Nervous System",
+      "path": "/module1-ros2-nervous-system"
+    },
+    {
+      "id": "module2-digital-twin-simulation",
+      "title": "Module 2: Digital Twin Simulation",
+      "path": "/module2-digital-twin-simulation"
+    },
+    {
+      "id": "module3-ai-brain-isaac",
+      "title": "Module 3: AI Brain (NVIDIA Isaac)",
+      "path": "/module3-ai-brain-isaac"
+    },
+    {
+      "id": "module4-vla-robotics",
+      "title": "Module 4: Vision-Language-Action Robotics",
+      "path": "/module4-vla-robotics"
+    }
+  ],
+  "additionalSections": [
+    {
+      "id": "capstone-project",
+      "title": "Capstone Project",
+      "path": "/capstone"
+    },
+    {
+      "id": "additional-materials",
+      "title": "Additional Materials",
+      "path": "/additional-materials"
+    },
+    {
+      "id": "weekly-roadmap",
+      "title": "Weekly Roadmap",
+      "path": "/weekly-roadmap"
+    }
+  ]
+}
+```
+
+## Error Responses
+
+### 404 Not Found
+When requesting a module that doesn't exist:
+```
+{
+  "error": "Module not found",
+  "code": "MODULE_NOT_FOUND",
+  "message": "The requested module does not exist"
+}
+```
+
+### 500 Internal Server Error
+When there's a server-side issue:
+```
+{
+  "error": "Internal server error",
+  "code": "INTERNAL_ERROR",
+  "message": "An unexpected error occurred while processing the request"
+}
+```

@@ -1,0 +1,24 @@
+{
+  "id": "additional-materials/hardware",
+  "title": "Chapter 15: Hardware Architecture & Lab Setup",
+  "description": "Learning Goals",
+  "source": "@site/docs/additional-materials/hardware.md",
+  "sourceDirName": "additional-materials",
+  "slug": "/additional-materials/hardware",
+  "permalink": "/docs/additional-materials/hardware",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/additional-materials/hardware.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Final Materials: Glossary, References, Exam, and Rubric",
+    "permalink": "/docs/additional-materials/final_materials"
+  },
+  "next": {
+    "title": "Additional Materials",
+    "permalink": "/docs/additional-materials/"
+  }
+}

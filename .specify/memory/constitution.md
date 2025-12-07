@@ -1,55 +1,97 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- Sync Impact Report:
+Version change: 1.0.0 -> 1.1.0
+Modified principles:
+  - [PRINCIPLE_1_NAME] -> Spec-Driven Writing
+  - [PRINCIPLE_2_NAME] -> Technical Reliability
+  - [PRINCIPLE_3_NAME] -> Beginner-Friendly + Professional Tone
+  - [PRINCIPLE_4_NAME] -> Documentation Quality
+  - [PRINCIPLE_5_NAME] -> Consistency
+Added sections: Book Requirements, Technical Constraints
+Removed sections: PRINCIPLE_6
+Templates requiring updates:
+  - .specify/templates/plan-template.md: ✅ updated
+  - .specify/templates/spec-template.md: ✅ updated
+  - .specify/templates/tasks-template.md: ✅ updated
+  - .specify/templates/commands/*.md: ✅ updated
+  - README.md: ⚠ pending (check for principle references)
+Follow-up TODOs: RATIFICATION_DATE
+-->
+# AI/Spec-Driven Book Creation Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Spec-Driven Writing
+Every module, chapter, and section is initiated through specifications generated via Spec-Kit Plus.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Technical Reliability
+All explanations, examples, and tutorials must be technically accurate and verifiable.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Beginner-Friendly + Professional Tone
+Understandable for beginners but maintains professional documentation quality.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Documentation Quality
+Writing style similar to high-quality open-source documentation (Docusaurus, Next.js, Python docs).
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Consistency
+Terminology, formatting, and structure must remain consistent across all modules and chapters.
 
-### [PRINCIPLE_6_NAME]
+## Book Requirements
 
+- Minimum **4 modules**
+- Each module contains **3–5 chapters**
+- Each chapter must include:
+  - Introduction
+  - Explanations / Tutorials
+  - Code examples / Working demos
+  - Best practices / Notes
+  - References if applicable
+- At least one real example must be tested, functional, and follow best practices.
 
-[PRINCIPLE__DESCRIPTION]
+### Structure Requirements
+- Book hierarchy:
+  - **Module → Chapters → Sections → Subsections**
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### Documentation Style
+- Use clear headings, tables, code blocks, and Mermaid diagrams.
+- Include callouts: `:::info`, `:::note`, `:::tip`, `:::warning`
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### Version Control
+- All updates tracked and documented for GitHub Pages deployment.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### Writing Standards
+- Clarity: Flesch-Kincaid readability score target: **Grade 9–12**
+- Voice: Friendly, teacher-like tone, Highly structured and step-by-step
+- Formatting: Markdown optimized for Docusaurus, Fenced code blocks with language tags, All content must be original (0% plagiarism tolerance)
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Technical Constraints
+
+- **Platform:** Docusaurus v3 (unless updated)
+- **Deployment:** GitHub Pages using GitHub Actions
+- **Output:**
+  - Fully working website
+  - Published on GitHub Pages
+  - All pages auto-generated using Spec-Kit workflow (specify → clarify → plan → tasks working sample project included per module)
+
+### Constraints
+- Every module and chapter must follow the Spec-Kit workflow:
+  - `/sp.specify`
+  - `/sp.clarify`
+  - `/sp.plan`
+  - `/sp.tasks`
+  - `/sp.implement`
+- Output only Markdown compatible with Docusaurus.
+- Avoid AI hallucinations; verify all technical content.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other practices. Amendments require documentation, approval, and a migration plan. All pull requests and reviews must verify compliance. Complexity must be justified.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+### Success Criteria
+- Book builds and runs locally in Docusaurus.
+- GitHub Pages deployment succeeds.
+- Consistent formatting and structure across all modules and chapters.
+- All code examples work correctly.
+- Spec-Kit workflow followed end-to-end.
+- Final book is polished, clear, and professional.
+
+**Version**: 1.1.0 | **Ratified**: TODO(RATIFICATION_DATE): Original adoption date unknown | **Last Amended**: 2025-12-04

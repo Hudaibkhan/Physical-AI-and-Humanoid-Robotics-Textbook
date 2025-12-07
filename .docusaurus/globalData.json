@@ -1,0 +1,162 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "additional-materials/cloud",
+              "path": "/docs/additional-materials/cloud",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "additional-materials/final_materials",
+              "path": "/docs/additional-materials/final_materials",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "additional-materials/hardware",
+              "path": "/docs/additional-materials/hardware",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "additional-materials/index",
+              "path": "/docs/additional-materials/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "capstone-project/chapter1",
+              "path": "/docs/capstone-project/chapter1",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "intro",
+              "path": "/docs/intro",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module1-ros2-nervous-system/chapter1",
+              "path": "/docs/module1-ros2-nervous-system/chapter1",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module1-ros2-nervous-system/chapter2",
+              "path": "/docs/module1-ros2-nervous-system/chapter2",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module1-ros2-nervous-system/chapter3",
+              "path": "/docs/module1-ros2-nervous-system/chapter3",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module1-ros2-nervous-system/chapter4",
+              "path": "/docs/module1-ros2-nervous-system/chapter4",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module1-ros2-nervous-system/chapter5",
+              "path": "/docs/module1-ros2-nervous-system/chapter5",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module1-ros2-nervous-system/citation_guide",
+              "path": "/docs/module1-ros2-nervous-system/citation_guide",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module1-ros2-nervous-system/glossary",
+              "path": "/docs/module1-ros2-nervous-system/glossary",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module1-ros2-nervous-system/index",
+              "path": "/docs/module1-ros2-nervous-system/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module2-digital-twin-simulation/chapter1",
+              "path": "/docs/module2-digital-twin-simulation/chapter1",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module2-digital-twin-simulation/chapter2",
+              "path": "/docs/module2-digital-twin-simulation/chapter2",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module2-digital-twin-simulation/chapter3",
+              "path": "/docs/module2-digital-twin-simulation/chapter3",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module2-digital-twin-simulation/index",
+              "path": "/docs/module2-digital-twin-simulation/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module3-ai-brain-isaac/chapter1",
+              "path": "/docs/module3-ai-brain-isaac/chapter1",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module3-ai-brain-isaac/chapter2",
+              "path": "/docs/module3-ai-brain-isaac/chapter2",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module3-ai-brain-isaac/chapter3",
+              "path": "/docs/module3-ai-brain-isaac/chapter3",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module3-ai-brain-isaac/index",
+              "path": "/docs/module3-ai-brain-isaac/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module4-vla-robotics/chapter1",
+              "path": "/docs/module4-vla-robotics/chapter1",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module4-vla-robotics/chapter2",
+              "path": "/docs/module4-vla-robotics/chapter2",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module4-vla-robotics/index",
+              "path": "/docs/module4-vla-robotics/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Physical-AI-and-Humanoid-Robotics-Textbook/intro",
+              "path": "/docs/Physical-AI-and-Humanoid-Robotics-Textbook/intro"
+            },
+            {
+              "id": "weekly-roadmap",
+              "path": "/docs/weekly-roadmap",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/docs/intro",
+                "label": "Physical AI & Humanoid Robotics Textbook"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "weekly-roadmap",
+  "title": "Weekly Roadmap",
+  "description": "This page outlines the weekly roadmap for the Physical AI & Humanoid Robotics Textbook, providing a structured learning path through all modules and key concepts.",
+  "source": "@site/docs/weekly-roadmap.md",
+  "sourceDirName": ".",
+  "slug": "/weekly-roadmap",
+  "permalink": "/docs/weekly-roadmap",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/weekly-roadmap.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Additional Materials",
+    "permalink": "/docs/additional-materials/"
+  }
+}

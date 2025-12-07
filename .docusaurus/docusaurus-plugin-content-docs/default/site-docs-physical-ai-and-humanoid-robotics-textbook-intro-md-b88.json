@@ -1,0 +1,15 @@
+{
+  "id": "Physical-AI-and-Humanoid-Robotics-Textbook/intro",
+  "title": "Physical AI & Humanoid Robotics Textbook",
+  "description": "A Comprehensive Guide to Intelligent Robotics",
+  "source": "@site/docs/Physical-AI-and-Humanoid-Robotics-Textbook/intro.md",
+  "sourceDirName": "Physical-AI-and-Humanoid-Robotics-Textbook",
+  "slug": "/Physical-AI-and-Humanoid-Robotics-Textbook/intro",
+  "permalink": "/docs/Physical-AI-and-Humanoid-Robotics-Textbook/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Physical-AI-and-Humanoid-Robotics-Textbook/intro.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

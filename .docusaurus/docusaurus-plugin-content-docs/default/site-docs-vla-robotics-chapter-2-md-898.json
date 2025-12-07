@@ -1,0 +1,24 @@
+{
+  "id": "vla-robotics/chapter2",
+  "title": "Chapter 13: Voice Commands → Whisper → ROS 2",
+  "description": "Learning Goals",
+  "source": "@site/docs/vla-robotics/chapter2.md",
+  "sourceDirName": "vla-robotics",
+  "slug": "/vla-robotics/chapter2",
+  "permalink": "/docs/vla-robotics/chapter2",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/vla-robotics/chapter2.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Chapter 12: Vision-Language-Action Systems",
+    "permalink": "/docs/vla-robotics/chapter1"
+  },
+  "next": {
+    "title": "Weekly Roadmap",
+    "permalink": "/docs/weekly-roadmap"
+  }
+}

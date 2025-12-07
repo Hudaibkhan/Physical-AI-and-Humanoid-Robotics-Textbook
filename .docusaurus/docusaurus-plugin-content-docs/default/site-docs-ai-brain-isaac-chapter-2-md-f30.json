@@ -1,0 +1,24 @@
+{
+  "id": "ai-brain-isaac/chapter2",
+  "title": "Chapter 10: Isaac ROS Perception + VSLAM",
+  "description": "Learning Goals",
+  "source": "@site/docs/ai-brain-isaac/chapter2.md",
+  "sourceDirName": "ai-brain-isaac",
+  "slug": "/ai-brain-isaac/chapter2",
+  "permalink": "/docs/ai-brain-isaac/chapter2",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/ai-brain-isaac/chapter2.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Chapter 9: NVIDIA Isaac Sim – Digital Twin",
+    "permalink": "/docs/ai-brain-isaac/chapter1"
+  },
+  "next": {
+    "title": "Chapter 11: Navigation (Nav2) + Biped Concepts",
+    "permalink": "/docs/ai-brain-isaac/chapter3"
+  }
+}

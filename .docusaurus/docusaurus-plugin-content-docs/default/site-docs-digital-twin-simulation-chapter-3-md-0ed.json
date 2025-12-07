@@ -1,0 +1,24 @@
+{
+  "id": "digital-twin-simulation/chapter3",
+  "title": "Chapter 8: Unity Visualization for Robotics",
+  "description": "Learning Goals",
+  "source": "@site/docs/digital-twin-simulation/chapter3.md",
+  "sourceDirName": "digital-twin-simulation",
+  "slug": "/digital-twin-simulation/chapter3",
+  "permalink": "/docs/digital-twin-simulation/chapter3",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/digital-twin-simulation/chapter3.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Chapter 7: Physics, Sensors & World Building",
+    "permalink": "/docs/digital-twin-simulation/chapter2"
+  },
+  "next": {
+    "title": "Final Exam",
+    "permalink": "/docs/final-exam"
+  }
+}

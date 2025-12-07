@@ -1,0 +1,24 @@
+{
+  "id": "additional-materials/cloud",
+  "title": "Cloud-Native Robotics Environments",
+  "description": "Learning Goals",
+  "source": "@site/docs/additional-materials/cloud.md",
+  "sourceDirName": "additional-materials",
+  "slug": "/additional-materials/cloud",
+  "permalink": "/docs/additional-materials/cloud",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/additional-materials/cloud.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Additional Materials",
+    "permalink": "/docs/additional-materials/"
+  },
+  "next": {
+    "title": "Final Materials: Glossary, References, Exam, and Rubric",
+    "permalink": "/docs/additional-materials/final_materials"
+  }
+}

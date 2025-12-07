@@ -1,0 +1,24 @@
+{
+  "id": "glossary",
+  "title": "Glossary",
+  "description": "This glossary provides definitions for key terms used throughout the textbook.",
+  "source": "@site/docs/glossary.md",
+  "sourceDirName": ".",
+  "slug": "/glossary",
+  "permalink": "/docs/glossary",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/glossary.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Final Exam",
+    "permalink": "/docs/final-exam"
+  },
+  "next": {
+    "title": "Hardware Requirements",
+    "permalink": "/docs/hardware"
+  }
+}

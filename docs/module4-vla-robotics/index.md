@@ -33,12 +33,6 @@ By the end of this module, you will be able to:
 - Chapter 1: Vision-Language-Action Systems
 - Chapter 2: Voice Commands → Whisper → ROS 2
 
-## Diagram
-
-![VLA System Architecture](/img/vla-system-architecture.png)
-
-*Note: This diagram shows the flow from vision input, language understanding, to action execution in VLA systems.*
-
 ## Direct Chapter Links
 
 - [Chapter 1: Vision-Language-Action Systems](./chapter1.md)

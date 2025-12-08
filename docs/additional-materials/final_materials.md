@@ -23,10 +23,6 @@ Before reviewing this section, you should have completed:
 - **Rubric**: Evaluation criteria and standards for course completion
 - **Assessment Methods**: Various ways to evaluate understanding and implementation skills
 
-## Diagrams
-
-![Textbook Structure Overview](/img/textbook-structure-overview.png)
-
 *Figure 1: Overview of the textbook structure, showing the relationship between modules and final assessment materials.*
 
 ## Examples

@@ -34,12 +34,6 @@ By the end of this module, you will be able to:
 - Chapter 4: Services and Actions
 - Chapter 5: URDF and Robot Description
 
-## Diagram
-
-![ROS 2 Architecture](/img/ros2-architecture.png)
-
-*Note: This diagram illustrates the core components of ROS 2 including nodes, topics, services, and the DDS communication layer.*
-
 ## Direct Chapter Links
 
 - [Chapter 1: Introduction to ROS 2](./chapter1.md)

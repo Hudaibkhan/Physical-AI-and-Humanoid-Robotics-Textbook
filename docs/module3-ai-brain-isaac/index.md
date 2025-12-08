@@ -33,12 +33,6 @@ By the end of this module, you will be able to:
 - Chapter 2: Isaac ROS Perception + VSLAM
 - Chapter 3: Navigation (Nav2) + Biped Concepts
 
-## Diagram
-
-![Isaac AI Architecture](/img/isaac-ai-architecture.png)
-
-*Note: This diagram illustrates the components of the Isaac AI system including simulation, perception, and navigation.*
-
 ## Direct Chapter Links
 
 - [Chapter 1: NVIDIA Isaac Sim – Digital Twin](./chapter1.md)

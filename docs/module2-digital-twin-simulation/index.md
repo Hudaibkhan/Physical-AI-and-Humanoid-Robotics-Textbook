@@ -32,12 +32,6 @@ By the end of this module, you will be able to:
 - Chapter 2: Physics, Sensors & World Building
 - Chapter 3: Unity Visualization for Robotics
 
-## Diagram
-
-![Digital Twin Architecture](/img/digital-twin-architecture.png)
-
-*Note: This diagram shows the relationship between physical robots, digital twins, and the simulation environment.*
-
 ## Direct Chapter Links
 
 - [Chapter 1: Gazebo Simulation Fundamentals](./chapter1.md)

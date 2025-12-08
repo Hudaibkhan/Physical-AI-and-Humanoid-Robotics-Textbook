@@ -1,4 +1,4 @@
-/**
+/* *
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
  */
@@ -24,7 +24,6 @@
 
 .modules {
   padding: 4rem 0;
-  background: linear-gradient(135deg, #483ecd 0%, #2575fc 100%);
 }
 
 .modules .container {
@@ -47,7 +46,7 @@
 }
 
 .card__header h3 {
-  /* color: #ffffff; */
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 

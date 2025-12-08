@@ -2,8 +2,6 @@
 
 This page outlines the weekly roadmap for the Physical AI & Humanoid Robotics Textbook, providing a structured learning path through all modules and key concepts.
 
-![Learning Path Overview](/img/learning-path-overview.png)
-
 *Figure 1: Overview of the 7-week learning path through the Physical AI & Humanoid Robotics curriculum.*
 
 ## Week 1: ROS 2 Basics
@@ -26,9 +24,6 @@ This page outlines the weekly roadmap for the Physical AI & Humanoid Robotics Te
 - Create your first ROS 2 workspace and package
 - Run basic ROS 2 commands (ros2 run, ros2 topic, ros2 service)
 - Explore the ROS 2 documentation and tutorials
-
-### Diagram
-![ROS 2 Architecture](/img/ros2-architecture.png)
 
 *Figure 2: ROS 2 architecture showing nodes, topics, services, and the DDS communication layer.*
 
@@ -61,9 +56,6 @@ This page outlines the weekly roadmap for the Physical AI & Humanoid Robotics Te
 - Build a URDF model of a simple robot
 - Visualize your robot in RViz
 
-### Diagram
-![ROS 2 Node Communication](/img/ros2-node-communication.png)
-
 *Figure 3: ROS 2 node communication patterns showing publishers, subscribers, and message passing.*
 
 ### Resources
@@ -94,9 +86,6 @@ This page outlines the weekly roadmap for the Physical AI & Humanoid Robotics Te
 - Create a custom world for robot testing
 - Add sensors to your robot model in simulation
 - Implement sensor data processing in ROS 2 nodes
-
-### Diagram
-![Gazebo Simulation Environment](/img/gazebo-simulation.png)
 
 *Figure 4: Gazebo simulation environment with physics properties and sensor integration.*
 
@@ -129,9 +118,6 @@ This page outlines the weekly roadmap for the Physical AI & Humanoid Robotics Te
 - Implement real-time synchronization between simulation and Unity
 - Generate synthetic training data using your digital twin
 
-### Diagram
-![Digital Twin Architecture](/img/digital-twin-architecture.png)
-
 *Figure 5: Digital twin architecture showing the relationship between physical robots, digital models, and simulation environments.*
 
 ### Resources
@@ -162,9 +148,6 @@ This page outlines the weekly roadmap for the Physical AI & Humanoid Robotics Te
 - Implement perception pipelines using Isaac ROS
 - Run VSLAM algorithms in Isaac Sim
 - Configure Nav2 for robot navigation
-
-### Diagram
-![Isaac AI Architecture](/img/isaac-ai-architecture.png)
 
 *Figure 6: NVIDIA Isaac architecture showing simulation, perception, and navigation components.*
 
@@ -197,9 +180,6 @@ This page outlines the weekly roadmap for the Physical AI & Humanoid Robotics Te
 - Implement voice command processing
 - Create a language-driven robot control interface
 
-### Diagram
-![VLA System Architecture](/img/vla-system-architecture.png)
-
 *Figure 7: Vision-Language-Action system architecture showing the flow from vision input, language understanding, to action execution.*
 
 ### Resources
@@ -229,9 +209,6 @@ This page outlines the weekly roadmap for the Physical AI & Humanoid Robotics Te
 - Integrate simulation, AI, and control components
 - Test your system in both simulated and (if available) real environments
 - Document and present your project results
-
-### Diagram
-![Capstone Project Integration](/img/capstone-integration.png)
 
 *Figure 8: Capstone project showing integration of all modules: ROS 2, Simulation, AI, and VLA systems.*
 

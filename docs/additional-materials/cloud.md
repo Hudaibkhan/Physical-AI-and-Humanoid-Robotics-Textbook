@@ -26,10 +26,6 @@ Before reading this chapter, you should have:
 - **Service Mesh**: Infrastructure layer for managing service-to-service communication
 - **Cloud-Edge Hybrid**: Architecture that combines cloud and edge computing for optimal performance
 
-## Diagrams
-
-![Cloud Robotics Architecture](/img/cloud-robotics-architecture.png)
-
 *Figure 1: Cloud Robotics Architecture showing the relationship between on-premises robots, edge devices, and cloud services.*
 
 ## Examples

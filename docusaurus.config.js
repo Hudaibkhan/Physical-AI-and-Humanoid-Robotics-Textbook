@@ -62,7 +62,7 @@ const config = {
             label: 'Modules',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/Hudaibkhan/Physical-AI-and-Humanoid-Robotics-Textbook',
             label: 'GitHub',
             position: 'right',
           },
@@ -101,7 +101,7 @@ const config = {
             items: [
               {
                 label: 'Capstone Project',
-                to: '/docs/capstone-project/',
+                to: '/docs/capstone-project/chapter1',
               },
               {
                 label: 'Additional Materials',
@@ -116,10 +116,6 @@ const config = {
           {
             title: 'Community',
             items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/your-org/physical-ai-and-humanoid-robotics-textbook',
-              },
               {
                 label: 'Stack Overflow',
                 href: 'https://stackoverflow.com/questions/tagged/docusaurus',

@@ -1,0 +1,15 @@
+{
+  "id": "accessibility-guide",
+  "title": "Accessibility Guide for RAG Chatbot",
+  "description": "This document outlines the accessibility features implemented in the RAG Chatbot system and provides guidelines for maintaining accessibility compliance.",
+  "source": "@site/docs/accessibility-guide.md",
+  "sourceDirName": ".",
+  "slug": "/accessibility-guide",
+  "permalink": "/docs/accessibility-guide",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/accessibility-guide.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

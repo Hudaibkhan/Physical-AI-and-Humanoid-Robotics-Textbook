@@ -3,52 +3,22 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/__docusaurus/debug',
-    component: ComponentCreator('/__docusaurus/debug', '5ff'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/config',
-    component: ComponentCreator('/__docusaurus/debug/config', '5ba'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/content',
-    component: ComponentCreator('/__docusaurus/debug/content', 'a2b'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/globalData',
-    component: ComponentCreator('/__docusaurus/debug/globalData', 'c3c'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/metadata',
-    component: ComponentCreator('/__docusaurus/debug/metadata', '156'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/registry',
-    component: ComponentCreator('/__docusaurus/debug/registry', '88c'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/routes',
-    component: ComponentCreator('/__docusaurus/debug/routes', '000'),
-    exact: true
-  },
-  {
     path: '/docs',
-    component: ComponentCreator('/docs', '567'),
+    component: ComponentCreator('/docs', '7d3'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', '528'),
+        component: ComponentCreator('/docs', '0a7'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', '48f'),
+            component: ComponentCreator('/docs', 'c9b'),
             routes: [
+              {
+                path: '/docs/accessibility-guide',
+                component: ComponentCreator('/docs/accessibility-guide', '852'),
+                exact: true
+              },
               {
                 path: '/docs/additional-materials/',
                 component: ComponentCreator('/docs/additional-materials/', '4bb'),
@@ -74,10 +44,25 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/docs/backup-recovery-guide',
+                component: ComponentCreator('/docs/backup-recovery-guide', '530'),
+                exact: true
+              },
+              {
                 path: '/docs/capstone-project/chapter1',
                 component: ComponentCreator('/docs/capstone-project/chapter1', '83d'),
                 exact: true,
                 sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/deployment-guide',
+                component: ComponentCreator('/docs/deployment-guide', '1ec'),
+                exact: true
+              },
+              {
+                path: '/docs/integration-guide',
+                component: ComponentCreator('/docs/integration-guide', '9a2'),
+                exact: true
               },
               {
                 path: '/docs/intro',
@@ -200,8 +185,23 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/docs/monitoring-alerting-guide',
+                component: ComponentCreator('/docs/monitoring-alerting-guide', '646'),
+                exact: true
+              },
+              {
+                path: '/docs/performance-optimization',
+                component: ComponentCreator('/docs/performance-optimization', '9e3'),
+                exact: true
+              },
+              {
                 path: '/docs/Physical-AI-and-Humanoid-Robotics-Textbook/intro',
                 component: ComponentCreator('/docs/Physical-AI-and-Humanoid-Robotics-Textbook/intro', '9d6'),
+                exact: true
+              },
+              {
+                path: '/docs/security-guide',
+                component: ComponentCreator('/docs/security-guide', '5d6'),
                 exact: true
               },
               {

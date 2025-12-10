@@ -1,0 +1,15 @@
+{
+  "id": "performance-optimization",
+  "title": "Performance Optimization Guide",
+  "description": "This document outlines the performance optimizations implemented in the RAG Chatbot system and provides recommendations for maintaining optimal performance.",
+  "source": "@site/docs/performance-optimization.md",
+  "sourceDirName": ".",
+  "slug": "/performance-optimization",
+  "permalink": "/docs/performance-optimization",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/performance-optimization.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

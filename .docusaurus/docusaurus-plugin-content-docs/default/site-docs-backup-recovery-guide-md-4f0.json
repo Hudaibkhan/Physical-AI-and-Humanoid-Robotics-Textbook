@@ -1,0 +1,15 @@
+{
+  "id": "backup-recovery-guide",
+  "title": "Backup and Recovery Guide for Qdrant Vector Database",
+  "description": "This document provides comprehensive procedures for backing up and recovering the Qdrant vector database used in the RAG Chatbot system.",
+  "source": "@site/docs/backup-recovery-guide.md",
+  "sourceDirName": ".",
+  "slug": "/backup-recovery-guide",
+  "permalink": "/docs/backup-recovery-guide",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/backup-recovery-guide.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

@@ -1,0 +1,15 @@
+{
+  "id": "integration-guide",
+  "title": "RAG Chatbot Integration Guide",
+  "description": "This guide explains how to integrate the RAG Chatbot widget into your Docusaurus-based book website.",
+  "source": "@site/docs/integration-guide.md",
+  "sourceDirName": ".",
+  "slug": "/integration-guide",
+  "permalink": "/docs/integration-guide",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/integration-guide.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

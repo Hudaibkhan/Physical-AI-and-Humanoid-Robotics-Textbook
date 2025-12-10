@@ -1,0 +1,15 @@
+{
+  "id": "deployment-guide",
+  "title": "RAG Chatbot Deployment Guide",
+  "description": "This guide provides comprehensive instructions for deploying the RAG Chatbot system to production environments using Render for the backend and Vercel for the frontend.",
+  "source": "@site/docs/deployment-guide.md",
+  "sourceDirName": ".",
+  "slug": "/deployment-guide",
+  "permalink": "/docs/deployment-guide",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/deployment-guide.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

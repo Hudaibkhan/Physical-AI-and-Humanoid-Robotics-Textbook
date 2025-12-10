@@ -26,8 +26,8 @@ export default {
       "maintainCase": false
     }
   },
-  "favicon": "img/favicon.ico",
-  "organizationName": "your-org",
+  "favicon": "img/logo2.png",
+  "organizationName": "Hudaibkhan",
   "projectName": "physical-ai-humanoid-robotics-textbook",
   "presets": [
     [
@@ -47,8 +47,23 @@ export default {
       }
     ]
   ],
+  "scripts": [
+    {
+      "src": "https://unpkg.com/react@18/umd/react.production.min.js",
+      "async": true
+    },
+    {
+      "src": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js",
+      "async": true
+    },
+    {
+      "src": "/js/chatbot-widget.js",
+      "async": true,
+      "defer": true
+    }
+  ],
   "themeConfig": {
-    "image": "img/docusaurus-social-card.jpg",
+    "image": "img/logo2.png",
     "navbar": {
       "title": "Physical AI Robotics",
       "logo": {
@@ -400,7 +415,6 @@ export default {
   "customFields": {},
   "plugins": [],
   "themes": [],
-  "scripts": [],
   "headTags": [],
   "stylesheets": [],
   "clientModules": [],

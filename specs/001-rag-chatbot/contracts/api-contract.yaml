@@ -1,0 +1,242 @@
+# OpenAPI Contract: RAG Chatbot Backend API
+
+openapi: 3.0.3
+info:
+  title: RAG Chatbot Backend API
+  description: API for the Retrieval-Augmented Generation chatbot system
+  version: 1.0.0
+servers:
+  - url: https://your-backend-url.com
+    description: Production server
+  - url: http://localhost:8000
+    description: Development server
+
+paths:
+  /embed:
+    post:
+      summary: Generate embedding for text
+      description: Creates a vector embedding for the provided text using the configured embedding model
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmbedRequest'
+      responses:
+        '200':
+          description: Embedding generated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmbedResponse'
+        '400':
+          description: Invalid input
+        '500':
+          description: Internal server error
+
+  /search:
+    post:
+      summary: Search for similar book chunks
+      description: Finds book content chunks similar to the provided query embedding
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+      responses:
+        '200':
+          description: Search results returned successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+        '400':
+          description: Invalid input
+        '500':
+          description: Internal server error
+
+  /ask-agent:
+    post:
+      summary: Process user query with RAG
+      description: Takes a user question, retrieves relevant context, and generates an answer using the LLM
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AskAgentRequest'
+      responses:
+        '200':
+          description: Answer generated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AskAgentResponse'
+        '400':
+          description: Invalid input
+        '500':
+          description: Internal server error
+
+  /health:
+    get:
+      summary: Health check
+      description: Returns the health status of the API
+      responses:
+        '200':
+          description: API is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "healthy"
+                  timestamp:
+                    type: string
+                    format: date-time
+
+components:
+  schemas:
+    EmbedRequest:
+      type: object
+      required:
+        - text
+      properties:
+        text:
+          type: string
+          description: Text to generate embedding for
+          example: "What is the main concept of this book?"
+        model:
+          type: string
+          description: Embedding model to use (optional, defaults to configured model)
+          example: "gemini-embedding-001"
+
+    EmbedResponse:
+      type: object
+      required:
+        - embedding
+        - model
+      properties:
+        embedding:
+          type: array
+          items:
+            type: number
+          description: The generated embedding vector
+          example: [0.1, 0.2, 0.3, 0.4]
+        model:
+          type: string
+          description: The model used for embedding
+          example: "gemini-embedding-001"
+
+    SearchRequest:
+      type: object
+      required:
+        - query_embedding
+      properties:
+        query_embedding:
+          type: array
+          items:
+            type: number
+          description: Embedding vector to search for similar content
+          example: [0.1, 0.2, 0.3, 0.4]
+        top_k:
+          type: integer
+          description: Number of results to return (optional, defaults to 5)
+          default: 5
+          minimum: 1
+          maximum: 20
+        book_id:
+          type: string
+          description: Specific book to search in (optional, searches all if not provided)
+          example: "book-123"
+
+    SearchResponse:
+      type: object
+      required:
+        - results
+        - count
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchResult'
+        count:
+          type: integer
+          description: Total number of results returned
+          example: 5
+
+    SearchResult:
+      type: object
+      required:
+        - chunk_id
+        - content
+        - similarity_score
+        - metadata
+      properties:
+        chunk_id:
+          type: string
+          description: Unique identifier of the chunk
+          example: "chunk-456"
+        content:
+          type: string
+          description: Content of the retrieved chunk
+          example: "The main concept of this book is about artificial intelligence..."
+        similarity_score:
+          type: number
+          description: Similarity score between 0 and 1
+          example: 0.85
+          minimum: 0
+          maximum: 1
+        metadata:
+          type: object
+          description: Additional metadata about the chunk
+          example:
+            book_id: "book-123"
+            chunk_index: 5
+
+    AskAgentRequest:
+      type: object
+      required:
+        - question
+      properties:
+        question:
+          type: string
+          description: User's question
+          example: "What are the key points about AI in this book?"
+        selected_text:
+          type: string
+          description: Text selected/highlighted by the user (optional)
+          example: "Artificial intelligence is a branch of computer science..."
+        session_id:
+          type: string
+          description: Conversation session identifier (optional)
+          example: "session-789"
+
+    AskAgentResponse:
+      type: object
+      required:
+        - response
+        - session_id
+      properties:
+        response:
+          type: string
+          description: The answer generated by the LLM
+          example: "The key points about AI in this book include..."
+        source_chunks:
+          type: array
+          items:
+            type: string
+          description: IDs of chunks used to generate the response (optional)
+          example: ["chunk-456", "chunk-789"]
+        session_id:
+          type: string
+          description: The conversation session identifier
+          example: "session-789"
+        confidence:
+          type: number
+          description: Confidence score of the response (optional)
+          example: 0.92
+          minimum: 0
+          maximum: 1

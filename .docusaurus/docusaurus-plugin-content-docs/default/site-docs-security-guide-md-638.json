@@ -1,0 +1,15 @@
+{
+  "id": "security-guide",
+  "title": "Security Guide for RAG Chatbot",
+  "description": "This document outlines the security measures implemented in the RAG Chatbot system and provides best practices for maintaining security in production environments.",
+  "source": "@site/docs/security-guide.md",
+  "sourceDirName": ".",
+  "slug": "/security-guide",
+  "permalink": "/docs/security-guide",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/security-guide.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

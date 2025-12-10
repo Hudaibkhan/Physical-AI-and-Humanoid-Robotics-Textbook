@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "name": "rag-chatbot-frontend",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distPath": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "NODE_VERSION": "18.x"
+  }
+}

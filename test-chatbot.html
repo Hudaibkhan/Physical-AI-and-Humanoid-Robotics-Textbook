@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Widget Test</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+</head>
+<body>
+    <h1>Chatbot Widget Test Page</h1>
+    <p>This page tests if the chatbot widget loads and initializes correctly.</p>
+
+    <script>
+        // Wait for React and ReactDOM to be available, then initialize the chatbot
+        function initializeChatbot() {
+            if (typeof React !== 'undefined' && typeof ReactDOM !== 'undefined') {
+                console.log('React and ReactDOM are loaded');
+
+                // Check if ChatbotWidget is available
+                if (typeof window.ChatbotWidget !== 'undefined' && typeof window.ChatbotWidget.init === 'function') {
+                    console.log('ChatbotWidget is available, initializing...');
+                    window.ChatbotWidget.init({
+                        backendUrl: 'http://localhost:8000',
+                        theme: 'auto'
+                    });
+                } else {
+                    console.log('ChatbotWidget not available yet, waiting...');
+                    setTimeout(initializeChatbot, 500);
+                }
+            } else {
+                console.log('React or ReactDOM not loaded yet, waiting...');
+                setTimeout(initializeChatbot, 500);
+            }
+        }
+
+        // Load the chatbot widget script dynamically
+        const script = document.createElement('script');
+        script.src = './frontend/dist/widget.js';
+        script.async = true;
+        script.onload = function() {
+            console.log('Chatbot widget script loaded');
+            setTimeout(initializeChatbot, 1000);
+        };
+        script.onerror = function() {
+            console.error('Failed to load chatbot widget script');
+        };
+        document.head.appendChild(script);
+    </script>
+</body>
+</html>

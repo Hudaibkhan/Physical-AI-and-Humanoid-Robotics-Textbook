@@ -11,6 +11,10 @@
           "mainDocId": "intro",
           "docs": [
             {
+              "id": "accessibility-guide",
+              "path": "/docs/accessibility-guide"
+            },
+            {
               "id": "additional-materials/cloud",
               "path": "/docs/additional-materials/cloud",
               "sidebar": "tutorialSidebar"
@@ -31,9 +35,21 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "backup-recovery-guide",
+              "path": "/docs/backup-recovery-guide"
+            },
+            {
               "id": "capstone-project/chapter1",
               "path": "/docs/capstone-project/chapter1",
               "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "deployment-guide",
+              "path": "/docs/deployment-guide"
+            },
+            {
+              "id": "integration-guide",
+              "path": "/docs/integration-guide"
             },
             {
               "id": "intro",
@@ -136,8 +152,20 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "monitoring-alerting-guide",
+              "path": "/docs/monitoring-alerting-guide"
+            },
+            {
+              "id": "performance-optimization",
+              "path": "/docs/performance-optimization"
+            },
+            {
               "id": "Physical-AI-and-Humanoid-Robotics-Textbook/intro",
               "path": "/docs/Physical-AI-and-Humanoid-Robotics-Textbook/intro"
+            },
+            {
+              "id": "security-guide",
+              "path": "/docs/security-guide"
             },
             {
               "id": "weekly-roadmap",

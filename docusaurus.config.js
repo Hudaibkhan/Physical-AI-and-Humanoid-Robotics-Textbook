@@ -15,8 +15,8 @@ const config = {
       onBrokenMarkdownImages: 'warn', // Handle broken images gracefully
     }
   },
-  favicon: 'img/favicon.ico',
-  organizationName: 'your-org',
+  favicon: 'img/logo2.png',
+  organizationName: 'Hudaibkhan', // Usually your GitHub org/user name.
   projectName: 'physical-ai-humanoid-robotics-textbook',
 
   presets: [
@@ -43,11 +43,28 @@ const config = {
     ],
   ],
 
+  scripts: [
+  {
+    src: "https://unpkg.com/react@18/umd/react.production.min.js",
+    async: true
+  },
+  {
+    src: "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js",
+    async: true
+  },
+  {
+    src
+  : "/js/chatbot-widget.js",
+    async: true,
+    defer: true
+  }
+],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/logo2.png',
       navbar: {
         title: 'Physical AI Robotics',
         logo: {

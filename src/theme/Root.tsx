@@ -34,14 +34,14 @@ export default function Root({ children }: RootProps): JSX.Element {
       console.log('Sending question to API:', question);
 
       // Use different endpoint for selected text queries
-      let apiUrl = 'http://localhost:8000/api/rag/';
+      let apiUrl = 'https://physical-ai-and-humanoid-robotics-textbook-production-2956.up.railway.app/api/rag/';
       let requestBody: any = {
         query: question,
         max_chunks: 3
       };
 
       if (isFromSelectedText && selectedText) {
-        apiUrl = 'http://localhost:8000/api/rag/selected';
+        apiUrl = 'https://physical-ai-and-humanoid-robotics-textbook-production-2956.up.railway.app/api/rag/selected';
         requestBody = {
           selected_text: selectedText,
           query: question

@@ -1,5 +1,18 @@
 [build]
-root = "backend"
+builder = "nixpacks"
+project_root = "./backend"
+install_cmd = "pip install -r requirements.txt"
+start_cmd = "uvicorn src.main:app --host 0.0.0.0 --port $PORT"
 
-[start]
-cmd = "uvicorn main:app --host 0.0.0.0 --port $PORT"
+[variables]
+PYTHON_VERSION = "3.11"
+# These variables should be set in Railway UI under Variables section:
+# GEMINI_API_KEY = ""
+# QDRANT_URL = ""
+# QDRANT_API_KEY = ""
+# COHERE_API_KEY = ""
+
+# Deployment Instructions:
+# 1. Deploy with: railway up
+# 2. To redeploy after code changes: railway up (same command)
+# 3. Or connect your GitHub repo to Railway for automatic deployments on push

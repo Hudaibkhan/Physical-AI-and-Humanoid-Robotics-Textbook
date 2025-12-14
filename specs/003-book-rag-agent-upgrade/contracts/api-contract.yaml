@@ -1,0 +1,95 @@
+openapi: 3.0.1
+info:
+  title: Book RAG Agent API
+  description: API for the Book RAG Agent that uses OpenAI Agents SDK with Gemini 2.5 Flash
+  version: 1.0.0
+paths:
+  /chat:
+    post:
+      summary: Send a message to the book RAG agent
+      description: Process user message with the RAG agent, supporting both normal RAG mode and selected text mode
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AgentRequest'
+      responses:
+        '200':
+          description: Successful response from the agent
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentResponse'
+        '400':
+          description: Bad request due to invalid input
+        '500':
+          description: Internal server error
+components:
+  schemas:
+    AgentRequest:
+      type: object
+      properties:
+        message:
+          type: string
+          description: The user's question or input message
+          example: "What are the key principles of humanoid robotics?"
+        selected_text:
+          type: string
+          description: Optional text selected by the user for focused queries
+          example: "Humanoid robots are robots with physical structure similar to that of a human body..."
+        session_id:
+          type: string
+          description: Session identifier for maintaining conversation context
+          example: "sess_abc123xyz"
+        mode:
+          type: string
+          description: The retrieval mode to use (determined automatically or specified)
+          enum: [rag, selected]
+          example: "rag"
+      required:
+        - message
+    AgentResponse:
+      type: object
+      properties:
+        response:
+          type: string
+          description: The agent's answer to the user's question
+          example: "The key principles of humanoid robotics include..."
+        source_chunks:
+          type: array
+          items:
+            $ref: '#/components/schemas/QueryResult'
+          description: List of chunks used to generate the response
+        session_id:
+          type: string
+          description: Session identifier for conversation continuity
+          example: "sess_abc123xyz"
+        citations:
+          type: array
+          items:
+            type: string
+          description: References to the source chunks used
+          example: ["Source: Chapter 3, Section 2", "Source: Chapter 5, Section 1"]
+    QueryResult:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Identifier of the source chunk
+          example: "chunk_001"
+        content:
+          type: string
+          description: The text content of the retrieved chunk (truncated)
+          example: "Humanoid robots are robots with physical structure similar to that of a human body..."
+        similarity_score:
+          type: number
+          description: Similarity score between query and chunk (0.0-1.0)
+          format: float
+          example: 0.85
+        metadata:
+          type: object
+          description: Additional information about the source
+          example:
+            source: "Chapter 3"
+            page: 45

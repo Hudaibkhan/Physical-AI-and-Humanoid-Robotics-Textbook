@@ -34,17 +34,20 @@ export default function Root({ children }: RootProps): JSX.Element {
       console.log('Sending question to API:', question);
 
       // Use different endpoint for selected text queries
-      let apiUrl = 'https://physical-ai-and-humanoid-robotics-textbook-production-2956.up.railway.app/api/rag/';
+      // Update to use our new OpenAI Agents SDK backend
+      let apiUrl = 'http://localhost:8000/chat';
       let requestBody: any = {
-        query: question,
-        max_chunks: 3
+        message: question,
+        selected_text: null,
+        session_id: null
       };
 
       if (isFromSelectedText && selectedText) {
-        apiUrl = 'https://physical-ai-and-humanoid-robotics-textbook-production-2956.up.railway.app/api/rag/selected';
+        apiUrl = 'http://localhost:8000/chat';
         requestBody = {
+          message: question,
           selected_text: selectedText,
-          query: question
+          session_id: null
         };
       }
 
@@ -69,8 +72,8 @@ export default function Root({ children }: RootProps): JSX.Element {
         ...prev,
         {
           role: 'assistant' as const,
-          content: data.answer || data.message || 'No response received',
-          sources: data.sources || [],
+          content: data.response || 'No response received',
+          sources: data.source_chunks || [],
           timestamp: new Date(),
         },
       ]);

@@ -35,7 +35,7 @@ export default function Root({ children }: RootProps): JSX.Element {
 
       // Use different endpoint for selected text queries
       // Update to use our new OpenAI Agents SDK backend
-      let apiUrl = 'http://localhost:8000/chat';
+      let apiUrl = 'https://fastapi-backend-for-book.vercel.app/chat';
       let requestBody: any = {
         message: question,
         selected_text: null,
@@ -43,7 +43,7 @@ export default function Root({ children }: RootProps): JSX.Element {
       };
 
       if (isFromSelectedText && selectedText) {
-        apiUrl = 'http://localhost:8000/chat';
+        apiUrl = 'https://fastapi-backend-for-book.vercel.app/chat';
         requestBody = {
           message: question,
           selected_text: selectedText,

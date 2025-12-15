@@ -128,7 +128,7 @@ const ChatWidget = ({ backendUrl }) => {
 // Initialize function for use in HTML pages
 ChatWidget.init = (config = {}) => {
   const defaultConfig = {
-    backendUrl: 'http://localhost:8000',
+    backendUrl: 'https://fastapi-backend-for-book.vercel.app',
     theme: 'auto' // 'light', 'dark', or 'auto'
   };
 

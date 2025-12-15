@@ -261,7 +261,7 @@
     function createWidget(config = {}) {
       // Default configuration
       const defaultConfig = {
-        backendUrl: 'http://localhost:8000',
+        backendUrl: 'https://fastapi-backend-for-book.vercel.app',
         theme: 'auto'
       };
 
@@ -548,7 +548,7 @@
       const widgetElement = document.querySelector('[data-chatbot-widget]');
       if (widgetElement) {
         const config = {
-          backendUrl: widgetElement.getAttribute('data-backend-url') || 'http://localhost:8000',
+          backendUrl: widgetElement.getAttribute('data-backend-url') || 'https://fastapi-backend-for-book.vercel.app',
           theme: widgetElement.getAttribute('data-theme') || 'auto'
         };
         global.ChatbotWidget.init(config);
@@ -559,7 +559,7 @@
     const widgetElement = document.querySelector('[data-chatbot-widget]');
     if (widgetElement) {
       const config = {
-        backendUrl: widgetElement.getAttribute('data-backend-url') || 'http://localhost:8000',
+        backendUrl: widgetElement.getAttribute('data-backend-url') || 'https://fastapi-backend-for-book.vercel.app',
         theme: widgetElement.getAttribute('data-theme') || 'auto'
       };
       global.ChatbotWidget.init(config);

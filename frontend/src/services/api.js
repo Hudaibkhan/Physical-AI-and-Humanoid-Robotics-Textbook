@@ -1,6 +1,6 @@
 class ApiService {
   constructor(backendUrl) {
-    this.backendUrl = backendUrl || process.env.BACKEND_URL || 'http://localhost:8000';
+    this.backendUrl = backendUrl || process.env.BACKEND_URL || 'https://fastapi-backend-for-book.vercel.app';
   }
 
   async createEmbedding(text, model = 'gemini-embedding-001') {

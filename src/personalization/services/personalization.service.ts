@@ -120,8 +120,11 @@ The agent ensures that:
     // Get auth token from localStorage if available
     const authToken = localStorage.getItem('authToken');
 
+    // Get RAG backend URL from environment variable
+    const RAG_BACKEND_URL = process.env.NEXT_PUBLIC_RAG_BACKEND_URL || 'http://localhost:8000';
+
     // Make API call to the Python backend for personalization
-    const response = await fetch('https://fastapi-backend-for-book.vercel.app/personalize-agent', {
+    const response = await fetch(`${RAG_BACKEND_URL}/personalize-agent`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

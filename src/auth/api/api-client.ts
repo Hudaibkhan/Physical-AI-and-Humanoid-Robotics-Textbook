@@ -1,7 +1,7 @@
 import { User } from '../user.entity';
 
 // API client for authentication endpoints
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+const API_BASE_URL = process.env.NEXT_PUBLIC_AUTH_BACKEND_URL || 'http://localhost:8000';
 
 interface RegisterRequest {
   email: string;

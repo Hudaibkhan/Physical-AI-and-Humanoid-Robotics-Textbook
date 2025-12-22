@@ -6,7 +6,7 @@
 export default {
   "title": "Physical AI and Humanoid Robotics Textbook",
   "tagline": "Learn about Physical AI, Humanoid Robotics, and ROS 2",
-  "url": "https://your-docusaurus-site.com",
+  "url": "https://physical-ai-and-humanoid-robotics-t-lake.vercel.app",
   "baseUrl": "/",
   "onBrokenLinks": "ignore",
   "markdown": {

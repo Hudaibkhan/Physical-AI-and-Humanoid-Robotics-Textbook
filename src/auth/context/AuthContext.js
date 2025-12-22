@@ -1,5 +1,11 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
 
+// Get backend URL from environment variable
+// For Docusaurus/React, use window.env or process.env
+const AUTH_BACKEND_URL = typeof window !== 'undefined' && window.env?.NEXT_PUBLIC_AUTH_BACKEND_URL
+  ? window.env.NEXT_PUBLIC_AUTH_BACKEND_URL
+  : (process.env.NEXT_PUBLIC_AUTH_BACKEND_URL || 'http://localhost:8000');
+
 // Initial state
 const initialState = {
   user: null,
@@ -72,7 +78,7 @@ export const AuthProvider = ({ children }) => {
 
     try {
       // Call Better Auth sign-in endpoint
-      const response = await fetch('https://fastapi-backend-for-book.vercel.app/api/auth/sign-in/email', {
+      const response = await fetch(`${AUTH_BACKEND_URL}/api/auth/sign-in/email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',  // Important: receive and send cookies
@@ -125,7 +131,7 @@ export const AuthProvider = ({ children }) => {
 
     try {
       // Call Better Auth sign-up endpoint
-      const response = await fetch('https://fastapi-backend-for-book.vercel.app/api/auth/sign-up/email', {
+      const response = await fetch(`${AUTH_BACKEND_URL}/api/auth/sign-up/email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',  // Important: send cookies
@@ -163,7 +169,7 @@ export const AuthProvider = ({ children }) => {
         // Save profile data separately (Better Auth only saves core user fields)
         if (skill_level || software_background || hardware_background || learning_goal) {
           try {
-            await fetch('https://fastapi-backend-for-book.vercel.app/api/user/profile', {
+            await fetch(`${AUTH_BACKEND_URL}/api/user/profile`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               credentials: 'include',
@@ -206,7 +212,7 @@ export const AuthProvider = ({ children }) => {
   const logout = async () => {
     try {
       // Call Better Auth sign-out endpoint
-      await fetch('https://fastapi-backend-for-book.vercel.app/api/auth/sign-out', {
+      await fetch(`${AUTH_BACKEND_URL}/api/auth/sign-out`, {
         method: 'POST',
         credentials: 'include'  // Important: send cookies
       });
@@ -224,7 +230,7 @@ export const AuthProvider = ({ children }) => {
   const fetchUser = async () => {
     try {
       // First, check for active session
-      const sessionResponse = await fetch('https://fastapi-backend-for-book.vercel.app/api/auth/get-session', {
+      const sessionResponse = await fetch(`${AUTH_BACKEND_URL}/api/auth/get-session`, {
         credentials: 'include'
       });
 
@@ -241,7 +247,7 @@ export const AuthProvider = ({ children }) => {
 
       // Fetch profile data to merge with user
       try {
-        const profileResponse = await fetch('https://fastapi-backend-for-book.vercel.app/api/user/profile', {
+        const profileResponse = await fetch(`${AUTH_BACKEND_URL}/api/user/profile`, {
           credentials: 'include'
         });
 

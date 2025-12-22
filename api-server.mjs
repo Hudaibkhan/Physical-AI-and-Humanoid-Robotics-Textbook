@@ -222,6 +222,7 @@ app.put('/api/auth/profile', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`API server running at https://fastapi-backend-for-book.vercel.app`);
-  console.log(`Better Auth API available at https://fastapi-backend-for-book.vercel.app/api/auth`);
+  const serverUrl = process.env.BETTER_AUTH_URL || `http://localhost:${port}`;
+  console.log(`API server running at ${serverUrl}`);
+  console.log(`Better Auth API available at ${serverUrl}/api/auth`);
 });

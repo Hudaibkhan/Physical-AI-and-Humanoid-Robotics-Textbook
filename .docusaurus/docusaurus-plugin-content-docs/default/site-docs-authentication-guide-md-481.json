@@ -1,0 +1,15 @@
+{
+  "id": "authentication-guide",
+  "title": "Better Auth + Neon DB + Personalization Guide for Docusaurus",
+  "description": "This document explains how to use and extend the authentication and personalization features in the Physical AI and Humanoid Robotics Textbook platform.",
+  "source": "@site/docs/authentication-guide.md",
+  "sourceDirName": ".",
+  "slug": "/authentication-guide",
+  "permalink": "/docs/authentication-guide",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/authentication-guide.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

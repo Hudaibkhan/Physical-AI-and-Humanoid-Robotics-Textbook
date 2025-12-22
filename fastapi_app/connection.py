@@ -342,3 +342,26 @@ else:
 model = OpenAIChatCompletionsModel( model="gemini-2.5-flash", openai_client=external_client )
 
 config = RunConfig( model=model, model_provider=external_client, tracing_disabled=True )
+
+# Groq configuration for LLM fallback
+groq_api_key = os.getenv("GROQ_API_KEY")
+
+if groq_api_key:
+    groq_client = AsyncOpenAI(
+        api_key=groq_api_key,
+        base_url="https://api.groq.com/openai/v1"
+    )
+
+    groq_model = OpenAIChatCompletionsModel(
+        model="llama-3.3-70b-versatile",  # Using Groq's Llama 3.3 70B model
+        openai_client=groq_client
+    )
+
+    groq_config = RunConfig(
+        model=groq_model,
+        model_provider=groq_client,
+        tracing_disabled=True
+    )
+else:
+    logger.warning("GROQ_API_KEY not found, LLM fallback disabled")
+    groq_config = None

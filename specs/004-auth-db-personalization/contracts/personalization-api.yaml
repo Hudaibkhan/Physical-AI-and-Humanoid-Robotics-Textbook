@@ -1,0 +1,283 @@
+openapi: 3.0.0
+info:
+  title: Book Platform Personalization API
+  description: API for handling content personalization based on user preferences
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Development server
+  - url: https://your-deployment-url.com
+    description: Production server
+
+paths:
+  /auth/register:
+    post:
+      summary: Register a new user with background information
+      description: Creates a new user account and stores background information as metadata
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+              properties:
+                email:
+                  type: string
+                  format: email
+                  description: User's email address
+                password:
+                  type: string
+                  format: password
+                  description: User's password
+                skill_level:
+                  type: string
+                  description: User's skill level (e.g., beginner, intermediate, advanced)
+                  enum: [beginner, intermediate, advanced, expert]
+                hardware_background:
+                  type: string
+                  description: User's hardware background
+                learning_goal:
+                  type: string
+                  description: User's learning goal
+      responses:
+        '200':
+          description: User registered successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  user:
+                    $ref: '#/components/schemas/User'
+        '400':
+          description: Invalid input data
+        '409':
+          description: User already exists
+
+  /auth/login:
+    post:
+      summary: Login existing user
+      description: Authenticates user and returns session token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  format: password
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  token:
+                    type: string
+                    description: Authentication token
+                  user:
+                    $ref: '#/components/schemas/User'
+        '400':
+          description: Invalid credentials
+
+  /personalize:
+    post:
+      summary: Personalize chapter content for user
+      description: Generates personalized content for a specific chapter based on user preferences
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - chapter_id
+              properties:
+                chapter_id:
+                  type: string
+                  description: Unique identifier for the chapter
+                personalization_level:
+                  type: string
+                  description: Desired personalization level
+                  enum: [beginner, intermediate, advanced]
+                language:
+                  type: string
+                  description: Preferred language for personalization
+      responses:
+        '200':
+          description: Chapter content personalized successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  chapter_id:
+                    type: string
+                    description: The chapter that was personalized
+                  personalized_content:
+                    type: string
+                    description: The personalized content
+                  metadata:
+                    type: object
+                    description: Additional metadata about the personalization
+        '400':
+          description: Invalid input data
+        '401':
+          description: Unauthorized - user not authenticated
+        '404':
+          description: Chapter not found
+
+  /personalization-state/{chapter_id}:
+    get:
+      summary: Get personalization state for a chapter
+      description: Retrieves the saved personalization settings for a specific chapter
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: chapter_id
+          in: path
+          required: true
+          description: Unique identifier for the chapter
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Personalization state retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  state:
+                    $ref: '#/components/schemas/UserChapterState'
+        '401':
+          description: Unauthorized - user not authenticated
+        '404':
+          description: No personalization state found for this chapter
+
+    put:
+      summary: Update personalization state for a chapter
+      description: Updates the saved personalization settings for a specific chapter
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: chapter_id
+          in: path
+          required: true
+          description: Unique identifier for the chapter
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                personalization_level:
+                  type: string
+                  description: Personalization level
+                  enum: [beginner, intermediate, advanced]
+                language:
+                  type: string
+                  description: Preferred language
+      responses:
+        '200':
+          description: Personalization state updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  state:
+                    $ref: '#/components/schemas/UserChapterState'
+        '400':
+          description: Invalid input data
+        '401':
+          description: Unauthorized - user not authenticated
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique user identifier
+        email:
+          type: string
+          format: email
+          description: User's email address
+        skill_level:
+          type: string
+          description: User's skill level
+        hardware_background:
+          type: string
+          description: User's hardware background
+        learning_goal:
+          type: string
+          description: User's learning goal
+        created_at:
+          type: string
+          format: date-time
+          description: Account creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          description: Last update timestamp
+
+    UserChapterState:
+      type: object
+      properties:
+        user_id:
+          type: string
+          description: Reference to User ID
+        chapter_id:
+          type: string
+          description: Reference to Chapter ID
+        personalization_level:
+          type: string
+          description: Level of personalization applied
+        language:
+          type: string
+          description: Language preference for personalization
+        updated_at:
+          type: string
+          format: date-time
+          description: Timestamp of last personalization update

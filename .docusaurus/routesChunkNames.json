@@ -1,15 +1,50 @@
 {
-  "/docs-7d3": {
+  "/auth-4fe": {
+    "__comp": "75501347",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  },
+  "/login-f20": {
+    "__comp": "413a0ea5",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  },
+  "/personalization-settings-fc9": {
+    "__comp": "eec64283",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  },
+  "/personalize-6e5": {
+    "__comp": "197b2033",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  },
+  "/signup-e7f": {
+    "__comp": "d07629e9",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  },
+  "/docs-bf8": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/docs-0a7": {
+  "/docs-115": {
     "__comp": "a7bd4aaa",
     "__props": "0058b4c6"
   },
-  "/docs-c9b": {
+  "/docs-376": {
     "__comp": "a94703ab"
   },
   "/docs/accessibility-guide-852": {
@@ -31,6 +66,10 @@
   "/docs/additional-materials/hardware-f5d": {
     "__comp": "17896441",
     "content": "433ebd33"
+  },
+  "/docs/authentication-guide-fb9": {
+    "__comp": "17896441",
+    "content": "48172b34"
   },
   "/docs/backup-recovery-guide-530": {
     "__comp": "17896441",

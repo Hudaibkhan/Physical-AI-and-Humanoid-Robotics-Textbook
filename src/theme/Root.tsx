@@ -2,9 +2,10 @@
  * Root - Global wrapper component for Docusaurus
  *
  * This component wraps the entire Docusaurus application,
- * allowing us to add global UI elements like the chatbot.
+ * allowing us to add global UI elements like the chatbot and authentication context.
  */
 import React from 'react';
+import { AuthProvider } from '../auth/context/AuthContext';
 
 interface RootProps {
   children: React.ReactNode;
@@ -14,6 +15,7 @@ export default function Root({ children }: RootProps): JSX.Element {
   const [isOpen, setIsOpen] = React.useState(false);
   const [messages, setMessages] = React.useState<any[]>([]);
   const [isLoading, setIsLoading] = React.useState(false);
+  const [isThinking, setIsThinking] = React.useState(false);  // NEW: Thinking animation state
   const [selectedText, setSelectedText] = React.useState<string>('');
 
   const toggleOpen = () => setIsOpen(!isOpen);
@@ -29,9 +31,14 @@ export default function Root({ children }: RootProps): JSX.Element {
 
     setMessages((prev) => [...prev, userMessage]);
     setIsLoading(true);
+    setIsThinking(true);  // NEW: Start thinking animation
 
     try {
       console.log('Sending question to API:', question);
+
+      // Note: With Better Auth's built-in session management, we don't need to manually handle auth tokens
+      // The session will be managed automatically by Better Auth
+      const authToken = null; // Better Auth handles this automatically
 
       // Use different endpoint for selected text queries
       // Update to use our new OpenAI Agents SDK backend
@@ -51,9 +58,18 @@ export default function Root({ children }: RootProps): JSX.Element {
         };
       }
 
+      const headers: Record<string, string> = {
+        'Content-Type': 'application/json'
+      };
+
+      // Include auth token if available
+      if (authToken) {
+        headers['Authorization'] = `Bearer ${authToken}`;
+      }
+
       const response = await fetch(apiUrl, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers,
         body: JSON.stringify(requestBody),
       });
 
@@ -68,6 +84,8 @@ export default function Root({ children }: RootProps): JSX.Element {
       const data = await response.json();
       console.log('API response data:', data);
 
+      setIsThinking(false);  // NEW: Stop thinking animation on response
+
       setMessages((prev) => [
         ...prev,
         {
@@ -79,6 +97,7 @@ export default function Root({ children }: RootProps): JSX.Element {
       ]);
     } catch (err) {
       console.error('Chatbot error:', err);
+      setIsThinking(false);  // NEW: Stop thinking animation on error
       const errorMessage = err instanceof Error ? err.message : 'Unknown error';
       setMessages((prev) => [
         ...prev,
@@ -151,9 +170,68 @@ export default function Root({ children }: RootProps): JSX.Element {
     };
   }, []);
 
+  // NEW: ThinkingAnimation component
+  const ThinkingAnimation = () => (
+    <div className="thinking-container">
+      <div className="thinking-bubble">
+        <span className="thinking-text">Thinking</span>
+        <div className="thinking-dots">
+          <div className="thinking-dot"></div>
+          <div className="thinking-dot"></div>
+          <div className="thinking-dot"></div>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
-    <>
+    <AuthProvider>
       {children}
+
+      {/* NEW: CSS for thinking animation */}
+      <style>{`
+        @keyframes wave {
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 1; }
+        }
+
+        .thinking-container {
+          display: flex;
+          justify-content: flex-start;
+          padding: 1rem 0;
+        }
+
+        .thinking-bubble {
+          background: #f1f5f9;
+          border-radius: 12px;
+          padding: 1rem 1.5rem;
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+        }
+
+        .thinking-text {
+          color: #64748b;
+          font-size: 0.95rem;
+        }
+
+        .thinking-dots {
+          display: flex;
+          gap: 0.25rem;
+        }
+
+        .thinking-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: #94a3b8;
+          animation: wave 1s ease-in-out infinite;
+        }
+
+        .thinking-dot:nth-child(1) { animation-delay: 0ms; }
+        .thinking-dot:nth-child(2) { animation-delay: 150ms; }
+        .thinking-dot:nth-child(3) { animation-delay: 300ms; }
+      `}</style>
 
       {/* Floating chatbot icon */}
       <button
@@ -281,31 +359,13 @@ export default function Root({ children }: RootProps): JSX.Element {
                     }}
                   >
                     <p style={{ margin: 0 }}>{msg.content}</p>
-                    {msg.sources && msg.sources.length > 0 && (
-                      <div style={{ marginTop: '0.5rem', fontSize: '0.8rem', color: '#64748b' }}>
-                        Sources: {msg.sources.length} chunks used
-                      </div>
-                    )}
+                    {/* REMOVED: source_chunks display - metadata suppression (T022) */}
                   </div>
                 </div>
               ))}
 
-              {isLoading && (
-                <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-                  <div
-                    style={{
-                      padding: '1rem 1.25rem',
-                      borderRadius: '16px',
-                      background: '#f1f5f9',
-                    }}
-                  >
-                    <div style={{ display: 'flex', gap: '0.5rem' }}>
-                      <span style={{ fontSize: '1.5rem' }}>⏳</span>
-                      <span>Thinking...</span>
-                    </div>
-                  </div>
-                </div>
-              )}
+              {/* NEW: Show thinking animation instead of old loading indicator */}
+              {isThinking && <ThinkingAnimation />}
             </div>
 
             {/* Input */}
@@ -417,6 +477,6 @@ export default function Root({ children }: RootProps): JSX.Element {
           </div>
         </div>
       )}
-    </>
+    </AuthProvider>
   );
 }

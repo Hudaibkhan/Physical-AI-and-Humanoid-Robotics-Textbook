@@ -35,6 +35,10 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "authentication-guide",
+              "path": "/docs/authentication-guide"
+            },
+            {
               "id": "backup-recovery-guide",
               "path": "/docs/backup-recovery-guide"
             },

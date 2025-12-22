@@ -1,0 +1,15 @@
+.docItemContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.docItemCol {
+  width: 100%;
+}
+
+@media (min-width: 997px) {
+  .docItemCol {
+    max-width: 75%;
+  }
+}

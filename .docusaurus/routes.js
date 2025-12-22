@@ -3,16 +3,41 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
+    path: '/auth',
+    component: ComponentCreator('/auth', '4fe'),
+    exact: true
+  },
+  {
+    path: '/login',
+    component: ComponentCreator('/login', 'f20'),
+    exact: true
+  },
+  {
+    path: '/personalization-settings',
+    component: ComponentCreator('/personalization-settings', 'fc9'),
+    exact: true
+  },
+  {
+    path: '/personalize',
+    component: ComponentCreator('/personalize', '6e5'),
+    exact: true
+  },
+  {
+    path: '/signup',
+    component: ComponentCreator('/signup', 'e7f'),
+    exact: true
+  },
+  {
     path: '/docs',
-    component: ComponentCreator('/docs', '7d3'),
+    component: ComponentCreator('/docs', 'bf8'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', '0a7'),
+        component: ComponentCreator('/docs', '115'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', 'c9b'),
+            component: ComponentCreator('/docs', '376'),
             routes: [
               {
                 path: '/docs/accessibility-guide',
@@ -42,6 +67,11 @@ export default [
                 component: ComponentCreator('/docs/additional-materials/hardware', 'f5d'),
                 exact: true,
                 sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/authentication-guide',
+                component: ComponentCreator('/docs/authentication-guide', 'fb9'),
+                exact: true
               },
               {
                 path: '/docs/backup-recovery-guide',

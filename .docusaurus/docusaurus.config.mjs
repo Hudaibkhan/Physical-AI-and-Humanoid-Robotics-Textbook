@@ -78,6 +78,10 @@ export default {
           "label": "Modules"
         },
         {
+          "type": "custom-Auth",
+          "position": "right"
+        },
+        {
           "href": "https://github.com/Hudaibkhan/Physical-AI-and-Humanoid-Robotics-Textbook",
           "label": "GitHub",
           "position": "right"

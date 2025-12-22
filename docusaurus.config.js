@@ -6,7 +6,7 @@ const darkTheme = themes.dracula;
 const config = {
   title: 'Physical AI and Humanoid Robotics Textbook',
   tagline: 'Learn about Physical AI, Humanoid Robotics, and ROS 2',
-  url: 'https://your-docusaurus-site.com',
+  url: 'https://physical-ai-and-humanoid-robotics-t-lake.vercel.app',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
@@ -77,6 +77,10 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Modules',
+          },
+          {
+            type: 'custom-Auth',
+            position: 'right',
           },
           {
             href: 'https://github.com/Hudaibkhan/Physical-AI-and-Humanoid-Robotics-Textbook',

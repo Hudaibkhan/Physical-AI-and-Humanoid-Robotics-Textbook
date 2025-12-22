@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../auth/context/AuthContext';
+import ENV_CONFIG from '../../config/env.config';
 
 const PersonalizeChapterButton = ({
   chapterId,
@@ -20,8 +21,8 @@ const PersonalizeChapterButton = ({
     setError(null);
 
     try {
-      // Get RAG backend URL from environment variable
-      const RAG_BACKEND_URL = process.env.NEXT_PUBLIC_RAG_BACKEND_URL || 'http://localhost:8000';
+      // Get RAG backend URL from environment configuration
+      const RAG_BACKEND_URL = ENV_CONFIG.RAG_BACKEND_URL;
 
       const response = await fetch(`${RAG_BACKEND_URL}/personalize-agent`, {
         method: 'POST',

@@ -1,10 +1,8 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import ENV_CONFIG from '../../config/env.config';
 
-// Get backend URL from environment variable
-// For Docusaurus/React, use window.env or process.env
-const AUTH_BACKEND_URL = typeof window !== 'undefined' && window.env?.NEXT_PUBLIC_AUTH_BACKEND_URL
-  ? window.env.NEXT_PUBLIC_AUTH_BACKEND_URL
-  : (process.env.NEXT_PUBLIC_AUTH_BACKEND_URL || 'http://localhost:8000');
+// Get backend URL from environment configuration
+const AUTH_BACKEND_URL = ENV_CONFIG.AUTH_BACKEND_URL;
 
 // Initial state
 const initialState = {

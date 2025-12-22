@@ -1,197 +1,240 @@
 {
-  "/auth-4fe": {
-    "__comp": "75501347",
+  "/__docusaurus/debug-5ff": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "a7456010"
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/config-5ba": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/content-a2b": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
     },
-    "config": "5e9f5e1a"
+    "__props": "__props---docusaurus-debug-content-3-c-0-be2"
+  },
+  "/__docusaurus/debug/globalData-c3c": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/metadata-156": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/registry-88c": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/routes-000": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/auth-4fe": {
+    "__comp": "__comp---site-src-pages-auth-js-755-117",
+    "__context": {
+      "plugin": "plugin---autha-74-da4"
+    },
+    "config": "config---auth-5-e-9-ea4"
   },
   "/login-f20": {
-    "__comp": "413a0ea5",
+    "__comp": "__comp---site-src-pages-login-jsx-413-8fe",
     "__context": {
-      "plugin": "a7456010"
+      "plugin": "plugin---autha-74-da4"
     },
-    "config": "5e9f5e1a"
+    "config": "config---auth-5-e-9-ea4"
   },
   "/personalization-settings-fc9": {
-    "__comp": "eec64283",
+    "__comp": "__comp---site-src-pages-personalization-settings-jseec-567",
     "__context": {
-      "plugin": "a7456010"
+      "plugin": "plugin---autha-74-da4"
     },
-    "config": "5e9f5e1a"
+    "config": "config---auth-5-e-9-ea4"
   },
   "/personalize-6e5": {
-    "__comp": "197b2033",
+    "__comp": "__comp---site-src-pages-personalize-jsx-197-bdb",
     "__context": {
-      "plugin": "a7456010"
+      "plugin": "plugin---autha-74-da4"
     },
-    "config": "5e9f5e1a"
+    "config": "config---auth-5-e-9-ea4"
   },
   "/signup-e7f": {
-    "__comp": "d07629e9",
+    "__comp": "__comp---site-src-pages-signup-jsxd-07-1cb",
     "__context": {
-      "plugin": "a7456010"
+      "plugin": "plugin---autha-74-da4"
     },
-    "config": "5e9f5e1a"
+    "config": "config---auth-5-e-9-ea4"
   },
   "/docs-bf8": {
-    "__comp": "5e95c892",
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
-      "plugin": "aba21aa0"
+      "plugin": "plugin---docsaba-d7c"
     }
   },
   "/docs-115": {
-    "__comp": "a7bd4aaa",
-    "__props": "0058b4c6"
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---docs-005-788"
   },
   "/docs-376": {
-    "__comp": "a94703ab"
+    "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/docs/accessibility-guide-852": {
-    "__comp": "17896441",
-    "content": "626ca9c8"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-accessibility-guide-626-b4e"
   },
   "/docs/additional-materials/-4bb": {
-    "__comp": "17896441",
-    "content": "01bb7284"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-additional-materials-01-b-6fd"
   },
   "/docs/additional-materials/cloud-cc8": {
-    "__comp": "17896441",
-    "content": "461625c4"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-additional-materials-cloud-461-5b8"
   },
   "/docs/additional-materials/final_materials-0bb": {
-    "__comp": "17896441",
-    "content": "ecb9c1c8"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-additional-materials-final-materialsecb-92e"
   },
   "/docs/additional-materials/hardware-f5d": {
-    "__comp": "17896441",
-    "content": "433ebd33"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-additional-materials-hardware-433-0b6"
   },
   "/docs/authentication-guide-fb9": {
-    "__comp": "17896441",
-    "content": "48172b34"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-authentication-guide-481-cf0"
   },
   "/docs/backup-recovery-guide-530": {
-    "__comp": "17896441",
-    "content": "4f0727d3"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-backup-recovery-guide-4-f-0-e0c"
   },
   "/docs/capstone-project/chapter1-83d": {
-    "__comp": "17896441",
-    "content": "34b60476"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-capstone-project-chapter-134-b-ed4"
   },
   "/docs/deployment-guide-1ec": {
-    "__comp": "17896441",
-    "content": "5bed4b11"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-deployment-guide-5-be-8e3"
   },
   "/docs/integration-guide-9a2": {
-    "__comp": "17896441",
-    "content": "e070ff20"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-integration-guidee-07-76c"
   },
   "/docs/intro-61d": {
-    "__comp": "17896441",
-    "content": "0e384e19"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-intro-0-e-3-be1"
   },
   "/docs/module1-ros2-nervous-system/-cbf": {
-    "__comp": "17896441",
-    "content": "d3727cba"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-ros-2-nervous-system-d-37-20b"
   },
   "/docs/module1-ros2-nervous-system/chapter1-1c6": {
-    "__comp": "17896441",
-    "content": "c2ca9d3c"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-ros-2-nervous-system-chapter-1-c-2-c-551"
   },
   "/docs/module1-ros2-nervous-system/chapter2-4a4": {
-    "__comp": "17896441",
-    "content": "d124a404"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-ros-2-nervous-system-chapter-2-d-12-dc6"
   },
   "/docs/module1-ros2-nervous-system/chapter3-eed": {
-    "__comp": "17896441",
-    "content": "98542534"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-ros-2-nervous-system-chapter-3985-727"
   },
   "/docs/module1-ros2-nervous-system/chapter4-dc8": {
-    "__comp": "17896441",
-    "content": "34344a16"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-ros-2-nervous-system-chapter-4343-df1"
   },
   "/docs/module1-ros2-nervous-system/chapter5-62f": {
-    "__comp": "17896441",
-    "content": "5ea4ecf2"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-ros-2-nervous-system-chapter-55-ea-9c1"
   },
   "/docs/module1-ros2-nervous-system/citation_guide-c2a": {
-    "__comp": "17896441",
-    "content": "b87ce00b"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-ros-2-nervous-system-citation-guideb-87-23c"
   },
   "/docs/module1-ros2-nervous-system/glossary-c43": {
-    "__comp": "17896441",
-    "content": "d5b411bc"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-ros-2-nervous-system-glossaryd-5-b-25e"
   },
   "/docs/module2-digital-twin-simulation/-8a0": {
-    "__comp": "17896441",
-    "content": "18c25838"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-2-digital-twin-simulation-18-c-5a7"
   },
   "/docs/module2-digital-twin-simulation/chapter1-9d3": {
-    "__comp": "17896441",
-    "content": "4a77e552"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-2-digital-twin-simulation-chapter-14-a-7-407"
   },
   "/docs/module2-digital-twin-simulation/chapter2-985": {
-    "__comp": "17896441",
-    "content": "19192b77"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-2-digital-twin-simulation-chapter-2191-1c7"
   },
   "/docs/module2-digital-twin-simulation/chapter3-562": {
-    "__comp": "17896441",
-    "content": "6cf96333"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-2-digital-twin-simulation-chapter-36-cf-964"
   },
   "/docs/module3-ai-brain-isaac/-82b": {
-    "__comp": "17896441",
-    "content": "4457ad60"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-3-ai-brain-isaac-445-505"
   },
   "/docs/module3-ai-brain-isaac/chapter1-270": {
-    "__comp": "17896441",
-    "content": "a47b0617"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-3-ai-brain-isaac-chapter-1-a-47-7bb"
   },
   "/docs/module3-ai-brain-isaac/chapter2-b71": {
-    "__comp": "17896441",
-    "content": "ee7f46f5"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-3-ai-brain-isaac-chapter-2-ee-7-3ce"
   },
   "/docs/module3-ai-brain-isaac/chapter3-878": {
-    "__comp": "17896441",
-    "content": "d8fc2c56"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-3-ai-brain-isaac-chapter-3-d-8-f-8d8"
   },
   "/docs/module4-vla-robotics/-9cd": {
-    "__comp": "17896441",
-    "content": "325a944b"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-4-vla-robotics-325-643"
   },
   "/docs/module4-vla-robotics/chapter1-8f3": {
-    "__comp": "17896441",
-    "content": "627b825c"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-4-vla-robotics-chapter-1627-f62"
   },
   "/docs/module4-vla-robotics/chapter2-db8": {
-    "__comp": "17896441",
-    "content": "fbcc52fd"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-4-vla-robotics-chapter-2-fbc-6ec"
   },
   "/docs/monitoring-alerting-guide-646": {
-    "__comp": "17896441",
-    "content": "1175b00b"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-monitoring-alerting-guide-117-1e3"
   },
   "/docs/performance-optimization-9e3": {
-    "__comp": "17896441",
-    "content": "580383ac"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-performance-optimization-580-9de"
   },
   "/docs/Physical-AI-and-Humanoid-Robotics-Textbook/intro-9d6": {
-    "__comp": "17896441",
-    "content": "b8878deb"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-physical-ai-and-humanoid-robotics-textbook-introb-88-c11"
   },
   "/docs/security-guide-5d6": {
-    "__comp": "17896441",
-    "content": "638581dc"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-security-guide-638-491"
   },
   "/docs/weekly-roadmap-83e": {
-    "__comp": "17896441",
-    "content": "888e4eaa"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-weekly-roadmap-888-d2a"
   },
   "/-e5f": {
-    "__comp": "1df93b7f",
+    "__comp": "__comp---site-src-pages-index-tsx-1-df-d3e",
     "__context": {
-      "plugin": "a7456010"
+      "plugin": "plugin---autha-74-da4"
     },
-    "config": "5e9f5e1a"
+    "config": "config---auth-5-e-9-ea4"
   }
 }

@@ -1,7 +1,8 @@
 import { createAuthClient } from 'better-auth/client';
+import ENV_CONFIG from '../config/env.config';
 
-// Get auth backend URL from environment variable
-const AUTH_BACKEND_URL = process.env.NEXT_PUBLIC_AUTH_BACKEND_URL || 'http://localhost:8000';
+// Get auth backend URL from environment configuration
+const AUTH_BACKEND_URL = ENV_CONFIG.AUTH_BACKEND_URL;
 
 // Create the Better Auth client
 export const client = createAuthClient({

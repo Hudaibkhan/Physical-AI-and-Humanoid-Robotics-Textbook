@@ -19,6 +19,13 @@ const config = {
   organizationName: 'Hudaibkhan', // Usually your GitHub org/user name.
   projectName: 'physical-ai-humanoid-robotics-textbook',
 
+  // Custom fields - accessible via window.docusaurus.customFields
+  customFields: {
+    authBackendUrl: process.env.NEXT_PUBLIC_AUTH_BACKEND_URL || 'http://localhost:8000',
+    ragBackendUrl: process.env.NEXT_PUBLIC_RAG_BACKEND_URL || 'http://localhost:8000',
+    frontendUrl: process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3002',
+  },
+
   presets: [
     [
       'classic',
@@ -45,6 +52,11 @@ const config = {
 
   scripts: [
   {
+    src: "/js/env-loader.js",
+    async: false,  // Load synchronously FIRST
+    defer: false
+  },
+  {
     src: "https://unpkg.com/react@18/umd/react.production.min.js",
     async: true
   },
@@ -53,8 +65,7 @@ const config = {
     async: true
   },
   {
-    src
-  : "/js/chatbot-widget.js",
+    src: "/js/chatbot-widget.js",
     async: true,
     defer: true
   }

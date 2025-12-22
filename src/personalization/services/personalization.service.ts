@@ -120,8 +120,9 @@ The agent ensures that:
     // Get auth token from localStorage if available
     const authToken = localStorage.getItem('authToken');
 
-    // Get RAG backend URL from environment variable
-    const RAG_BACKEND_URL = process.env.NEXT_PUBLIC_RAG_BACKEND_URL || 'http://localhost:8000';
+    // Get RAG backend URL from environment configuration
+    const ENV_CONFIG = await import('../../config/env.config');
+    const RAG_BACKEND_URL = ENV_CONFIG.default.RAG_BACKEND_URL;
 
     // Make API call to the Python backend for personalization
     const response = await fetch(`${RAG_BACKEND_URL}/personalize-agent`, {

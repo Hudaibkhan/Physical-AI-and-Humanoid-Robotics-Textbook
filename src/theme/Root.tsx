@@ -6,6 +6,7 @@
  */
 import React from 'react';
 import { AuthProvider } from '../auth/context/AuthContext';
+import ENV_CONFIG from '../config/env.config';
 
 interface RootProps {
   children: React.ReactNode;
@@ -40,8 +41,8 @@ export default function Root({ children }: RootProps): JSX.Element {
       // The session will be managed automatically by Better Auth
       const authToken = null; // Better Auth handles this automatically
 
-      // Get RAG backend URL from environment variable
-      const RAG_BACKEND_URL = process.env.NEXT_PUBLIC_RAG_BACKEND_URL || 'http://localhost:8000';
+      // Get RAG backend URL from environment configuration
+      const RAG_BACKEND_URL = ENV_CONFIG.RAG_BACKEND_URL;
 
       // Use different endpoint for selected text queries
       let apiUrl = `${RAG_BACKEND_URL}/chat`;

@@ -29,6 +29,11 @@ export default {
   "favicon": "img/logo2.png",
   "organizationName": "Hudaibkhan",
   "projectName": "physical-ai-humanoid-robotics-textbook",
+  "customFields": {
+    "authBackendUrl": "http://localhost:8000",
+    "ragBackendUrl": "http://localhost:8000",
+    "frontendUrl": "http://localhost:3002"
+  },
   "presets": [
     [
       "classic",
@@ -48,6 +53,11 @@ export default {
     ]
   ],
   "scripts": [
+    {
+      "src": "/js/env-loader.js",
+      "async": false,
+      "defer": false
+    },
     {
       "src": "https://unpkg.com/react@18/umd/react.production.min.js",
       "async": true
@@ -416,7 +426,6 @@ export default {
   "staticDirectories": [
     "static"
   ],
-  "customFields": {},
   "plugins": [],
   "themes": [],
   "headTags": [],

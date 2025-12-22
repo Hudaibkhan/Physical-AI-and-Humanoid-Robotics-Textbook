@@ -1,7 +1,8 @@
 import { User } from '../user.entity';
+import ENV_CONFIG from '../../config/env.config';
 
 // API client for authentication endpoints
-const API_BASE_URL = process.env.NEXT_PUBLIC_AUTH_BACKEND_URL || 'http://localhost:8000';
+const API_BASE_URL = ENV_CONFIG.AUTH_BACKEND_URL;
 
 interface RegisterRequest {
   email: string;

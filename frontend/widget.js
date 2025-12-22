@@ -261,7 +261,7 @@
     function createWidget(config = {}) {
       // Default configuration - use environment variable or fallback
       const defaultConfig = {
-        backendUrl: (typeof window !== 'undefined' && window.env?.NEXT_PUBLIC_RAG_BACKEND_URL) || 'http://localhost:8000',
+        backendUrl: (typeof window !== 'undefined' && window.env?.NEXT_PUBLIC_RAG_BACKEND_URL) || 'https://fastapi-backend-for-book.vercel.app',
         theme: 'auto'
       };
 

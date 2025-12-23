@@ -32,25 +32,25 @@ const getWindowEnv = () => {
 const docusaurusConfig = getDocusaurusConfig();
 const windowEnv = getWindowEnv();
 
-// Export configuration with fallbacks
+// Export configuration with production-ready fallbacks (NO LOCALHOST)
 export const ENV_CONFIG = {
   // Auth Backend URL (Better Auth - Node.js)
   AUTH_BACKEND_URL:
     windowEnv.NEXT_PUBLIC_AUTH_BACKEND_URL ||
     docusaurusConfig.authBackendUrl ||
-    'http://localhost:8000',
+    'https://physical-ai-book-database.vercel.app',
 
   // RAG Backend URL (FastAPI - Python)
   RAG_BACKEND_URL:
     windowEnv.NEXT_PUBLIC_RAG_BACKEND_URL ||
     docusaurusConfig.ragBackendUrl ||
-    'http://localhost:8000',
+    'https://fastapi-backend-for-book.vercel.app',
 
   // Frontend URL
   FRONTEND_URL:
     windowEnv.NEXT_PUBLIC_FRONTEND_URL ||
     docusaurusConfig.frontendUrl ||
-    'http://localhost:3002',
+    'https://physical-ai-and-humanoid-robotics-t-lake.vercel.app',
 
   // Database URL (server-side only, but keeping for completeness)
   DATABASE_URL:

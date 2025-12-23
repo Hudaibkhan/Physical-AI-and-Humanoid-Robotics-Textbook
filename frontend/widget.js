@@ -259,7 +259,7 @@
   const ChatWidget = (function() {
     // Simple implementation for the widget without requiring JSX transformation
     function createWidget(config = {}) {
-      // Default configuration - use environment variable or fallback
+      // Default configuration - use environment variable or production URL
       const defaultConfig = {
         backendUrl: (typeof window !== 'undefined' && window.env?.NEXT_PUBLIC_RAG_BACKEND_URL) || 'https://fastapi-backend-for-book.vercel.app',
         theme: 'auto'
@@ -548,7 +548,7 @@
       const widgetElement = document.querySelector('[data-chatbot-widget]');
       if (widgetElement) {
         const config = {
-          backendUrl: widgetElement.getAttribute('data-backend-url') || (typeof window !== 'undefined' && window.env?.NEXT_PUBLIC_RAG_BACKEND_URL) || 'http://localhost:8000',
+          backendUrl: widgetElement.getAttribute('data-backend-url') || (typeof window !== 'undefined' && window.env?.NEXT_PUBLIC_RAG_BACKEND_URL) || 'https://fastapi-backend-for-book.vercel.app',
           theme: widgetElement.getAttribute('data-theme') || 'auto'
         };
         global.ChatbotWidget.init(config);

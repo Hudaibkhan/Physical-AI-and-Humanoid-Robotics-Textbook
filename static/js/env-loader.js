@@ -27,10 +27,10 @@
       window.env.NEXT_PUBLIC_FRONTEND_URL = frontendUrlMeta.content;
     }
 
-    // Fallback defaults for local development
-    window.env.NEXT_PUBLIC_AUTH_BACKEND_URL = window.env.NEXT_PUBLIC_AUTH_BACKEND_URL || 'http://localhost:8000';
-    window.env.NEXT_PUBLIC_RAG_BACKEND_URL = window.env.NEXT_PUBLIC_RAG_BACKEND_URL || 'http://localhost:8000';
-    window.env.NEXT_PUBLIC_FRONTEND_URL = window.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3002';
+    // Production-ready fallback defaults (NO LOCALHOST)
+    window.env.NEXT_PUBLIC_AUTH_BACKEND_URL = window.env.NEXT_PUBLIC_AUTH_BACKEND_URL || 'https://physical-ai-book-database.vercel.app';
+    window.env.NEXT_PUBLIC_RAG_BACKEND_URL = window.env.NEXT_PUBLIC_RAG_BACKEND_URL || 'https://fastapi-backend-for-book.vercel.app';
+    window.env.NEXT_PUBLIC_FRONTEND_URL = window.env.NEXT_PUBLIC_FRONTEND_URL || 'https://physical-ai-and-humanoid-robotics-t-lake.vercel.app';
 
     console.log('[ENV] Environment variables loaded:', {
       AUTH_BACKEND_URL: window.env.NEXT_PUBLIC_AUTH_BACKEND_URL,

@@ -20,10 +20,11 @@ const config = {
   projectName: 'physical-ai-humanoid-robotics-textbook',
 
   // Custom fields - accessible via window.docusaurus.customFields
+  // CRITICAL: Use environment variables WITHOUT localhost fallbacks for production
   customFields: {
-    authBackendUrl: process.env.NEXT_PUBLIC_AUTH_BACKEND_URL || 'http://localhost:8000',
-    ragBackendUrl: process.env.NEXT_PUBLIC_RAG_BACKEND_URL || 'http://localhost:8000',
-    frontendUrl: process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3002',
+    authBackendUrl: process.env.NEXT_PUBLIC_AUTH_BACKEND_URL || 'https://physical-ai-book-database.vercel.app',
+    ragBackendUrl: process.env.NEXT_PUBLIC_RAG_BACKEND_URL || 'https://fastapi-backend-for-book.vercel.app',
+    frontendUrl: process.env.NEXT_PUBLIC_FRONTEND_URL || 'https://physical-ai-and-humanoid-robotics-t-lake.vercel.app',
   },
 
   presets: [

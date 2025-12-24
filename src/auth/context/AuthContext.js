@@ -129,6 +129,8 @@ export const AuthProvider = ({ children }) => {
 
     try {
       // Call Better Auth sign-up endpoint
+      // IMPORTANT: Only send Better Auth fields (name, email, password)
+      // Profile fields are saved separately via /api/user/profile/create
       const response = await fetch(`${AUTH_BACKEND_URL}/api/auth/sign-up/email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -136,11 +138,8 @@ export const AuthProvider = ({ children }) => {
         body: JSON.stringify({
           name,
           email,
-          password,
-          skill_level,
-          software_background,
-          hardware_background,
-          learning_goal
+          password
+          // Do NOT send profile fields to Better Auth - it ignores them
         })
       });
 
@@ -164,20 +163,28 @@ export const AuthProvider = ({ children }) => {
         // Better Auth returns user and session in the response
         const { user, session } = data;
 
-        // Save profile data separately (Better Auth only saves core user fields)
+        // CRITICAL: Create user profile in separate table
+        // Must call /create endpoint (not PUT /profile)
         if (skill_level || software_background || hardware_background || learning_goal) {
           try {
-            await fetch(`${AUTH_BACKEND_URL}/api/user/profile`, {
+            const profileResponse = await fetch(`${AUTH_BACKEND_URL}/api/user/profile/create`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              credentials: 'include',
+              credentials: 'include',  // Session cookie from signup
               body: JSON.stringify({
-                skill_level,
-                software_background,
-                hardware_background,
-                learning_goal
+                skillLevel: skill_level,              // Backend expects camelCase
+                softwareBackground: software_background,
+                hardwareBackground: hardware_background,
+                learningGoal: learning_goal
               })
             });
+
+            if (!profileResponse.ok) {
+              console.error('Profile creation failed:', await profileResponse.text());
+              // Don't fail signup - profile can be created later
+            } else {
+              console.log('Profile created successfully');
+            }
           } catch (profileError) {
             console.error('Failed to save profile data:', profileError);
             // Don't fail signup if profile save fails

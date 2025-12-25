@@ -52,6 +52,18 @@ function PersonalizationSettingsPage() {
     }
   };
 
+  // CRITICAL: Check loading BEFORE checking isAuthenticated
+  // This prevents false "not logged in" state while session is being restored
+  if (authState.loading) {
+    return (
+      <Layout title="Personalization Settings">
+        <div className="container margin-vert--lg text--center">
+          <p>Loading...</p>
+        </div>
+      </Layout>
+    );
+  }
+
   if (!authState.isAuthenticated) {
     return (
       <Layout title="Personalization Settings" description="Please log in to access personalization settings">

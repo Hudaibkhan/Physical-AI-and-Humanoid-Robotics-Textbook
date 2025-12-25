@@ -167,6 +167,13 @@ export const AuthProvider = ({ children }) => {
         // Must call /create endpoint (not PUT /profile)
         if (skill_level || software_background || hardware_background || learning_goal) {
           try {
+            console.log('[AUTH] Creating user profile...', {
+              skillLevel: skill_level,
+              softwareBackground: software_background,
+              hardwareBackground: hardware_background,
+              learningGoal: learning_goal
+            });
+
             const profileResponse = await fetch(`${AUTH_BACKEND_URL}/api/user/profile/create`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -179,16 +186,22 @@ export const AuthProvider = ({ children }) => {
               })
             });
 
+            console.log('[AUTH] Profile creation response status:', profileResponse.status);
+
             if (!profileResponse.ok) {
-              console.error('Profile creation failed:', await profileResponse.text());
+              const errorText = await profileResponse.text();
+              console.error('[AUTH] Profile creation failed:', errorText);
               // Don't fail signup - profile can be created later
             } else {
-              console.log('Profile created successfully');
+              const profileData = await profileResponse.json();
+              console.log('[AUTH] ✅ Profile created successfully:', profileData);
             }
           } catch (profileError) {
-            console.error('Failed to save profile data:', profileError);
+            console.error('[AUTH] Failed to save profile data:', profileError);
             // Don't fail signup if profile save fails
           }
+        } else {
+          console.warn('[AUTH] No profile data provided during signup');
         }
 
         // Merge profile data with user for immediate display
@@ -234,21 +247,35 @@ export const AuthProvider = ({ children }) => {
   // Fetch user function - gets session and profile data
   const fetchUser = async () => {
     try {
+      console.log('[AUTH] Checking session...');
+
       // First, check for active session
       const sessionResponse = await fetch(`${AUTH_BACKEND_URL}/api/auth/get-session`, {
-        credentials: 'include'
+        method: 'GET',
+        credentials: 'include',  // CRITICAL: Must send cookies
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
 
+      console.log('[AUTH] Session response status:', sessionResponse.status);
+
       if (!sessionResponse.ok) {
+        console.log('[AUTH] No active session found');
         dispatch({ type: 'SET_LOADING', payload: false });
         return;
       }
 
       const sessionData = await sessionResponse.json();
+      console.log('[AUTH] Session data:', sessionData);
+
       if (!sessionData || !sessionData.user) {
+        console.log('[AUTH] No user in session');
         dispatch({ type: 'SET_LOADING', payload: false });
         return;
       }
+
+      console.log('[AUTH] Session restored for user:', sessionData.user.email);
 
       // Fetch profile data to merge with user
       try {

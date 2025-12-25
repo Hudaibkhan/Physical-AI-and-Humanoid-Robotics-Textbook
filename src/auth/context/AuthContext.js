@@ -250,12 +250,20 @@ export const AuthProvider = ({ children }) => {
   const fetchUser = async () => {
     try {
       console.log('[AUTH] Checking for existing session...');
+
+      // Add timeout to prevent infinite loading
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+
       const sessionRes = await fetch(
         `${AUTH_BACKEND_URL}/api/auth/get-session`,
         {
           credentials: 'include',
+          signal: controller.signal
         }
       );
+
+      clearTimeout(timeoutId);
 
       if (!sessionRes.ok) {
         console.log('[AUTH] No session found (HTTP', sessionRes.status, ')');
@@ -305,7 +313,11 @@ export const AuthProvider = ({ children }) => {
         },
       });
     } catch (err) {
-      console.error('[AUTH] Session restore failed:', err);
+      if (err.name === 'AbortError') {
+        console.error('[AUTH] Session check timed out - backend may be down');
+      } else {
+        console.error('[AUTH] Session restore failed:', err);
+      }
       dispatch({ type: 'NO_SESSION' });
     }
   };

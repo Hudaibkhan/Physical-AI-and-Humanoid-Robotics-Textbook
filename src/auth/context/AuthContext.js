@@ -87,6 +87,7 @@ export const AuthProvider = ({ children }) => {
      Login
   ======================= */
   const login = async (email, password) => {
+    console.log('[AUTH] Login attempt for:', email);
     dispatch({ type: 'LOGIN_START' });
 
     try {
@@ -103,9 +104,11 @@ export const AuthProvider = ({ children }) => {
       const data = await res.json();
 
       if (!res.ok || !data?.user) {
+        console.error('[AUTH] Login failed:', data?.message || 'Unknown error');
         throw new Error(data?.message || 'Login failed');
       }
 
+      console.log('[AUTH] Login successful for:', data.user.email);
       dispatch({
         type: 'LOGIN_SUCCESS',
         payload: {
@@ -131,10 +134,12 @@ export const AuthProvider = ({ children }) => {
     hardware_background,
     learning_goal
   ) => {
+    console.log('[AUTH] Signup attempt for:', email);
     dispatch({ type: 'LOGIN_START' });
 
     try {
       /* ---- Step 1: Signup ---- */
+      console.log('[AUTH] Step 1: Creating user account...');
       const res = await fetch(
         `${AUTH_BACKEND_URL}/api/auth/sign-up/email`,
         {
@@ -148,36 +153,59 @@ export const AuthProvider = ({ children }) => {
       const data = await res.json();
 
       if (!res.ok || !data?.user) {
+        console.error('[AUTH] Signup failed:', data?.message || 'Unknown error');
         throw new Error(data?.message || 'Signup failed');
       }
 
+      console.log('[AUTH] User account created:', data.user.email);
+
       /* ---- Step 2: Wait for cookie to be ready ---- */
+      console.log('[AUTH] Step 2: Waiting for session cookie...');
       await new Promise((r) => setTimeout(r, 200));
 
       /* ---- Step 3: Confirm session exists ---- */
+      console.log('[AUTH] Step 3: Verifying session...');
       const sessionCheck = await fetch(
         `${AUTH_BACKEND_URL}/api/auth/get-session`,
         { credentials: 'include' }
       );
 
       if (!sessionCheck.ok) {
-        console.error('[AUTH] Session not ready, skipping profile creation');
+        console.error('[AUTH] Session not ready (HTTP', sessionCheck.status, '), skipping profile creation');
       } else {
+        console.log('[AUTH] Session verified successfully');
         /* ---- Step 4: Create profile ---- */
-        await fetch(
-          `${AUTH_BACKEND_URL}/api/user/profile/create`,
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            credentials: 'include',
-            body: JSON.stringify({
-              skillLevel: skill_level,
-              softwareBackground: software_background,
-              hardwareBackground: hardware_background,
-              learningGoal: learning_goal,
-            }),
+        try {
+          console.log('[AUTH] Creating user profile...');
+          const profileRes = await fetch(
+            `${AUTH_BACKEND_URL}/api/user/profile/create`,
+            {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              credentials: 'include',
+              body: JSON.stringify({
+                skillLevel: skill_level,
+                softwareBackground: software_background,
+                hardwareBackground: hardware_background,
+                learningGoal: learning_goal,
+              }),
+            }
+          );
+
+          if (!profileRes.ok) {
+            const profileError = await profileRes.json().catch(() => ({}));
+            console.error('[AUTH] Profile creation failed:', {
+              status: profileRes.status,
+              statusText: profileRes.statusText,
+              error: profileError
+            });
+          } else {
+            console.log('[AUTH] Profile created successfully');
           }
-        );
+        } catch (profileError) {
+          console.error('[AUTH] Profile creation error:', profileError);
+          // Don't throw - signup succeeded, profile creation is non-critical
+        }
       }
 
       dispatch({
@@ -221,6 +249,7 @@ export const AuthProvider = ({ children }) => {
   ======================= */
   const fetchUser = async () => {
     try {
+      console.log('[AUTH] Checking for existing session...');
       const sessionRes = await fetch(
         `${AUTH_BACKEND_URL}/api/auth/get-session`,
         {
@@ -229,6 +258,7 @@ export const AuthProvider = ({ children }) => {
       );
 
       if (!sessionRes.ok) {
+        console.log('[AUTH] No session found (HTTP', sessionRes.status, ')');
         dispatch({ type: 'NO_SESSION' });
         return;
       }
@@ -236,9 +266,12 @@ export const AuthProvider = ({ children }) => {
       const sessionData = await sessionRes.json();
 
       if (!sessionData?.user) {
+        console.log('[AUTH] Session response missing user data');
         dispatch({ type: 'NO_SESSION' });
         return;
       }
+
+      console.log('[AUTH] Session restored for user:', sessionData.user.email);
 
       /* ---- Fetch profile ---- */
       let profile = {};
@@ -251,8 +284,13 @@ export const AuthProvider = ({ children }) => {
         if (profileRes.ok) {
           const profileData = await profileRes.json();
           profile = profileData.profile || {};
+          console.log('[AUTH] Profile loaded successfully');
+        } else {
+          console.log('[AUTH] No profile found (will be created on next update)');
         }
-      } catch (_) {}
+      } catch (profileError) {
+        console.error('[AUTH] Profile fetch error:', profileError);
+      }
 
       dispatch({
         type: 'FETCH_USER_SUCCESS',
@@ -267,6 +305,7 @@ export const AuthProvider = ({ children }) => {
         },
       });
     } catch (err) {
+      console.error('[AUTH] Session restore failed:', err);
       dispatch({ type: 'NO_SESSION' });
     }
   };

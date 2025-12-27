@@ -1,7 +1,33 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
 import ENV_CONFIG from '../../config/env.config';
 
-const AUTH_BACKEND_URL = ENV_CONFIG.AUTH_BACKEND_URL;
+// CRITICAL FIX: Use relative path for auth API to leverage Vercel rewrites
+// This makes cookies first-party (same domain) instead of third-party (cross-domain)
+// Vercel rewrites /auth-api/* to the backend, but cookies are set on frontend domain
+const getAuthApiUrl = () => {
+  if (typeof window !== 'undefined') {
+    // In production (Vercel), use relative path for proxy
+    // This avoids cross-domain cookie issues since vercel.app is on the Public Suffix List
+    if (window.location.hostname.includes('vercel.app')) {
+      return ''; // Use relative URLs like /auth-api/auth/sign-in
+    }
+  }
+  // In development or custom domains, use the direct backend URL
+  return ENV_CONFIG.AUTH_BACKEND_URL;
+};
+
+const AUTH_BACKEND_URL = getAuthApiUrl();
+const AUTH_API_PREFIX = AUTH_BACKEND_URL ? `${AUTH_BACKEND_URL}/api` : '/auth-api';
+
+// Debug log to help troubleshoot auth issues
+if (typeof window !== 'undefined') {
+  console.log('[AUTH] API configuration:', {
+    hostname: window.location.hostname,
+    isVercel: window.location.hostname.includes('vercel.app'),
+    AUTH_API_PREFIX,
+    usingProxy: AUTH_API_PREFIX === '/auth-api'
+  });
+}
 
 /* =======================
    Initial State
@@ -92,7 +118,7 @@ export const AuthProvider = ({ children }) => {
 
     try {
       const res = await fetch(
-        `${AUTH_BACKEND_URL}/api/auth/sign-in/email`,
+        `${AUTH_API_PREFIX}/auth/sign-in/email`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -141,7 +167,7 @@ export const AuthProvider = ({ children }) => {
       /* ---- Step 1: Signup ---- */
       console.log('[AUTH] Step 1: Creating user account...');
       const res = await fetch(
-        `${AUTH_BACKEND_URL}/api/auth/sign-up/email`,
+        `${AUTH_API_PREFIX}/auth/sign-up/email`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -166,7 +192,7 @@ export const AuthProvider = ({ children }) => {
       /* ---- Step 3: Confirm session exists ---- */
       console.log('[AUTH] Step 3: Verifying session...');
       const sessionCheck = await fetch(
-        `${AUTH_BACKEND_URL}/api/auth/get-session`,
+        `${AUTH_API_PREFIX}/auth/get-session`,
         { credentials: 'include' }
       );
 
@@ -187,7 +213,7 @@ export const AuthProvider = ({ children }) => {
         try {
           console.log('[AUTH] Creating user profile...');
           const profileRes = await fetch(
-            `${AUTH_BACKEND_URL}/api/user/profile/create`,
+            `${AUTH_API_PREFIX}/user/profile/create`,
             {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -242,7 +268,7 @@ export const AuthProvider = ({ children }) => {
   const logout = async () => {
     try {
       await fetch(
-        `${AUTH_BACKEND_URL}/api/auth/sign-out`,
+        `${AUTH_API_PREFIX}/auth/sign-out`,
         {
           method: 'POST',
           credentials: 'include',
@@ -265,7 +291,7 @@ export const AuthProvider = ({ children }) => {
       const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
 
       const sessionRes = await fetch(
-        `${AUTH_BACKEND_URL}/api/auth/get-session`,
+        `${AUTH_API_PREFIX}/auth/get-session`,
         {
           credentials: 'include',
           signal: controller.signal
@@ -294,7 +320,7 @@ export const AuthProvider = ({ children }) => {
       let profile = {};
       try {
         const profileRes = await fetch(
-          `${AUTH_BACKEND_URL}/api/user/profile`,
+          `${AUTH_API_PREFIX}/user/profile`,
           { credentials: 'include' }
         );
 

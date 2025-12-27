@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/auth-api/:path*",
+      "destination": "https://physical-ai-book-database.vercel.app/api/:path*"
+    }
+  ]
+}

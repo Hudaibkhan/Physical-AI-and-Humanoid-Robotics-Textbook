@@ -30,9 +30,9 @@ export default {
   "organizationName": "Hudaibkhan",
   "projectName": "physical-ai-humanoid-robotics-textbook",
   "customFields": {
-    "authBackendUrl": "http://localhost:8000",
-    "ragBackendUrl": "http://localhost:8000",
-    "frontendUrl": "http://localhost:3002"
+    "authBackendUrl": "https://physical-ai-book-database.vercel.app",
+    "ragBackendUrl": "https://fastapi-backend-for-book.vercel.app",
+    "frontendUrl": "https://physical-ai-and-humanoid-robotics-t-lake.vercel.app"
   },
   "presets": [
     [

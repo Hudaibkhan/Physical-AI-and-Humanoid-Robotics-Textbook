@@ -170,10 +170,19 @@ export const AuthProvider = ({ children }) => {
         { credentials: 'include' }
       );
 
-      if (!sessionCheck.ok) {
-        console.error('[AUTH] Session not ready (HTTP', sessionCheck.status, '), skipping profile creation');
+      // CRITICAL FIX: Parse response body to verify session actually exists
+      // Better Auth returns HTTP 200 with null body when no session exists
+      const sessionData = await sessionCheck.json().catch(() => null);
+
+      if (!sessionCheck.ok || !sessionData?.user) {
+        console.error('[AUTH] Session not ready:', {
+          httpStatus: sessionCheck.status,
+          hasUser: !!sessionData?.user,
+          sessionData: sessionData
+        });
+        console.error('[AUTH] Skipping profile creation - no valid session');
       } else {
-        console.log('[AUTH] Session verified successfully');
+        console.log('[AUTH] Session verified successfully for user:', sessionData.user.email);
         /* ---- Step 4: Create profile ---- */
         try {
           console.log('[AUTH] Creating user profile...');

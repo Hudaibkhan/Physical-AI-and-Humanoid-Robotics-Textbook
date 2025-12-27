@@ -266,15 +266,25 @@ export const AuthProvider = ({ children }) => {
      Logout
   ======================= */
   const logout = async () => {
+    console.log('[AUTH] Logout attempt...');
     try {
-      await fetch(
+      const res = await fetch(
         `${AUTH_API_PREFIX}/auth/sign-out`,
         {
           method: 'POST',
+          headers: { 'Content-Type': 'application/json' },  // CRITICAL: Required to avoid 415 error
           credentials: 'include',
         }
       );
-    } catch (_) {}
+
+      if (res.ok) {
+        console.log('[AUTH] Logout successful - session destroyed');
+      } else {
+        console.error('[AUTH] Logout response:', res.status, res.statusText);
+      }
+    } catch (err) {
+      console.error('[AUTH] Logout error:', err);
+    }
 
     dispatch({ type: 'LOGOUT' });
   };
@@ -319,6 +329,7 @@ export const AuthProvider = ({ children }) => {
       /* ---- Fetch profile ---- */
       let profile = {};
       try {
+        console.log('[AUTH] Fetching user profile...');
         const profileRes = await fetch(
           `${AUTH_API_PREFIX}/user/profile`,
           { credentials: 'include' }
@@ -327,25 +338,35 @@ export const AuthProvider = ({ children }) => {
         if (profileRes.ok) {
           const profileData = await profileRes.json();
           profile = profileData.profile || {};
-          console.log('[AUTH] Profile loaded successfully');
+          console.log('[AUTH] Profile loaded successfully:', profileData);
         } else {
-          console.log('[AUTH] No profile found (will be created on next update)');
+          const errorText = await profileRes.text().catch(() => 'Unknown error');
+          console.log('[AUTH] No profile found (HTTP', profileRes.status, '):', errorText);
         }
       } catch (profileError) {
         console.error('[AUTH] Profile fetch error:', profileError);
       }
 
+      // CRITICAL FIX: Backend returns camelCase (skillLevel), not snake_case (skill_level)
+      // Map to snake_case for consistency with the rest of the frontend
       dispatch({
         type: 'FETCH_USER_SUCCESS',
         payload: {
           user: {
             ...sessionData.user,
-            skill_level: profile.skill_level,
-            software_background: profile.software_background,
-            hardware_background: profile.hardware_background,
-            learning_goal: profile.learning_goal,
+            skill_level: profile.skillLevel || profile.skill_level,
+            software_background: profile.softwareBackground || profile.software_background,
+            hardware_background: profile.hardwareBackground || profile.hardware_background,
+            learning_goal: profile.learningGoal || profile.learning_goal,
           },
         },
+      });
+
+      console.log('[AUTH] Profile fields loaded:', {
+        skill_level: profile.skillLevel || profile.skill_level,
+        software_background: profile.softwareBackground || profile.software_background,
+        hardware_background: profile.hardwareBackground || profile.hardware_background,
+        learning_goal: profile.learningGoal || profile.learning_goal,
       });
     } catch (err) {
       if (err.name === 'AbortError') {

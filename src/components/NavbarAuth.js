@@ -67,7 +67,7 @@ const NavbarAuth = () => {
   return (
     <>
       {authState.isAuthenticated ? (
-        <div className="navbar__item" style={{ position: 'relative' }}>
+        <div className="navbar__item navbar__auth-container" style={{ position: 'relative' }}>
           <button
             className="navbar__link"
             onClick={() => setShowDropdown(!showDropdown)}
@@ -168,9 +168,9 @@ const NavbarAuth = () => {
           )}
         </div>
       ) : (
-        <div className="navbar__item">
+        <div className="navbar__item navbar__auth-container">
           <div className="button-group">
-            <a href="/auth" className="button button--secondary button--sm" style={{ marginRight: '0.5rem' }}>
+            <a href="/auth" className="button button--secondary button--sm">
               Login
             </a>
             <a href="/auth" onClick={() => setIsLogin(false)} className="button button--primary button--sm">

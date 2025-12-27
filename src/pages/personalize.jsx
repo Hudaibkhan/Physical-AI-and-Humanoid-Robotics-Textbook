@@ -54,11 +54,39 @@ const PersonalizePage = () => {
               </div>
               <div className="card__body">
                 {authState.isAuthenticated ? (
-                  <div>
-                    <p><strong>Email:</strong> {authState.user?.email}</p>
-                    <p><strong>Software Background:</strong> {authState.user?.software_background || 'Not specified'}</p>
-                    <p><strong>Hardware Background:</strong> {authState.user?.hardware_background || 'Not specified'}</p>
-                    <p><strong>Learning Goal:</strong> {authState.user?.learning_goal || 'Not specified'}</p>
+                  <div className="profile-grid">
+                    <div className="profile-field">
+                      <span className="profile-field-label">Email</span>
+                      <span className="profile-field-value">{authState.user?.email || 'Not specified'}</span>
+                    </div>
+                    <div className="profile-field">
+                      <span className="profile-field-label">Skill Level</span>
+                      <span className={`profile-field-value ${!authState.user?.skill_level ? 'not-set' : ''}`}>
+                        {authState.user?.skill_level ? (
+                          <span className={`skill-level-badge ${authState.user.skill_level.toLowerCase()}`}>
+                            {authState.user.skill_level}
+                          </span>
+                        ) : 'Not specified'}
+                      </span>
+                    </div>
+                    <div className="profile-field">
+                      <span className="profile-field-label">Software Background</span>
+                      <span className={`profile-field-value ${!authState.user?.software_background ? 'not-set' : ''}`}>
+                        {authState.user?.software_background || 'Not specified'}
+                      </span>
+                    </div>
+                    <div className="profile-field">
+                      <span className="profile-field-label">Hardware Background</span>
+                      <span className={`profile-field-value ${!authState.user?.hardware_background ? 'not-set' : ''}`}>
+                        {authState.user?.hardware_background || 'Not specified'}
+                      </span>
+                    </div>
+                    <div className="profile-field" style={{ gridColumn: '1 / -1' }}>
+                      <span className="profile-field-label">Learning Goal</span>
+                      <span className={`profile-field-value ${!authState.user?.learning_goal ? 'not-set' : ''}`}>
+                        {authState.user?.learning_goal || 'Not specified'}
+                      </span>
+                    </div>
                   </div>
                 ) : (
                   <p><em>Please log in to see your profile information.</em></p>

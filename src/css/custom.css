@@ -224,6 +224,241 @@ blockquote {
   }
 }
 
+/* ===========================================
+   ISSUE 1 FIX: Chatbot Widget Mobile - Send Button
+   Ensures Send button is fully visible on small screens
+   =========================================== */
+@media (max-width: 480px) {
+  .chatbot-modal {
+    width: calc(100vw - 20px) !important;
+    max-width: none !important;
+    height: calc(100vh - 100px) !important;
+    max-height: none !important;
+    margin: 10px !important;
+    border-radius: 12px !important;
+  }
+
+  .chatbot-modal-overlay {
+    padding: 10px !important;
+  }
+
+  .chatbot-input-form {
+    padding: 12px !important;
+  }
+
+  .chatbot-input-container {
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+  }
+
+  .chatbot-textarea {
+    flex: 1 !important;
+    min-width: 0 !important;
+    padding: 10px 12px !important;
+    font-size: 16px !important; /* Prevent iOS zoom */
+  }
+
+  .chatbot-send-button {
+    flex-shrink: 0 !important;
+    padding: 10px 16px !important;
+    min-width: 60px !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .chatbot-modal {
+    width: calc(100vw - 10px) !important;
+    margin: 5px !important;
+  }
+
+  .chatbot-input-form {
+    padding: 10px 8px !important;
+  }
+
+  .chatbot-send-button {
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+  }
+
+  .chatbot-textarea {
+    padding: 8px 10px !important;
+  }
+}
+
+/* ===========================================
+   ISSUE 2 FIX: Header Auth Buttons Mobile
+   Keeps auth buttons visible when hamburger menu opens
+   =========================================== */
+
+/* Auth buttons container - always visible */
+.navbar__item.navbar__auth-container {
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Mobile: Keep auth buttons in navbar, not in sidebar */
+@media (max-width: 996px) {
+  /* Ensure auth buttons stay in the navbar header area */
+  .navbar__items--right .navbar__item:has(.button-group),
+  .navbar__items--right .navbar__item:has([class*="navbar__link"]) {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Auth button group styling on mobile */
+  .navbar__items--right .button-group {
+    display: flex !important;
+    gap: 0.25rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .navbar__items--right .button-group .button {
+    padding: 0.35rem 0.6rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* Profile dropdown button on mobile */
+  .navbar__items--right .navbar__link {
+    padding: 0.35rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Ensure dropdown menu doesn't get hidden */
+  .navbar__items--right [style*="position: relative"] {
+    position: relative !important;
+  }
+}
+
+/* Very small mobile screens */
+@media (max-width: 480px) {
+  .navbar__items--right .button-group .button {
+    padding: 0.3rem 0.5rem !important;
+    font-size: 0.7rem !important;
+  }
+
+  .navbar__items--right .button-group {
+    gap: 0.2rem !important;
+  }
+}
+
+/* ===========================================
+   ISSUE 3 FIX: Personalization Page UI
+   Better display for user profile data
+   =========================================== */
+
+/* Profile card styling */
+.personalization-profile-card {
+  background: linear-gradient(135deg, rgba(106, 17, 203, 0.1) 0%, rgba(37, 117, 252, 0.1) 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+/* Profile field display */
+.profile-field {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border-left: 4px solid var(--ifm-color-primary);
+}
+
+.profile-field-label {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-600);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.profile-field-value {
+  font-size: 1.1rem;
+  color: var(--ifm-font-color-base);
+  font-weight: 500;
+}
+
+.profile-field-value.not-set {
+  color: var(--ifm-color-emphasis-500);
+  font-style: italic;
+}
+
+/* Form controls styling */
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.1);
+}
+
+.form-control:disabled {
+  background: var(--ifm-color-emphasis-100);
+  cursor: not-allowed;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-font-color-base);
+}
+
+/* Button group spacing */
+.button-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Profile grid layout for personalize page */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+/* Skill level badge */
+.skill-level-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.skill-level-badge.beginner {
+  background: rgba(6, 214, 160, 0.2);
+  color: #059669;
+}
+
+.skill-level-badge.intermediate {
+  background: rgba(37, 117, 252, 0.2);
+  color: #2563eb;
+}
+
+.skill-level-badge.advanced {
+  background: rgba(106, 17, 203, 0.2);
+  color: #7c3aed;
+}
+
 /* Custom animation for interactive elements */
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 rgba(37, 117, 252, 0.4); }

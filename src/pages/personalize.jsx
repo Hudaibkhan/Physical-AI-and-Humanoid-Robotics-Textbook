@@ -24,6 +24,7 @@ const PersonalizePage = () => {
         <h3>Personalized Content Preview</h3>
         <p>Based on your profile:</p>
         <ul>
+          <li><strong>Skill Level:</strong> ${userProfile?.skill_level || 'Not specified'}</li>
           <li><strong>Software Background:</strong> ${userProfile?.software_background || 'Not specified'}</li>
           <li><strong>Hardware Background:</strong> ${userProfile?.hardware_background || 'Not specified'}</li>
           <li><strong>Learning Goal:</strong> ${userProfile?.learning_goal || 'Not specified'}</li>
